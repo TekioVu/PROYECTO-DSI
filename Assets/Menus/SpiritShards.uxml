@@ -1,0 +1,4 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/USS/SpiritShards.uss?fileID=7433441132597879392&amp;guid=1858f890831715b468428e520410ae78&amp;type=3#SpiritShards"/>
+    <ui:Image source="project://database/Assets/Imagenes_Referencia/SpiritShardsReferencia.png?fileID=2800000&amp;guid=8043dafa8a7534b42bea666af9fc7461&amp;type=3#SpiritShardsReferencia"/>
+</ui:UXML>
