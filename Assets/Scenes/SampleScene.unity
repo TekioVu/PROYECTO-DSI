@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 1622688005}
   - component: {fileID: 1622688004}
   m_Layer: 5
-  m_Name: UIDocument
+  m_Name: SpiritShards
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
