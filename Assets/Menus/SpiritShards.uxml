@@ -1,4 +1,17 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/USS/SpiritShards.uss?fileID=7433441132597879392&amp;guid=1858f890831715b468428e520410ae78&amp;type=3#SpiritShards"/>
-    <ui:Image source="project://database/Assets/Imagenes_Referencia/SpiritShardsReferencia.png?fileID=2800000&amp;guid=8043dafa8a7534b42bea666af9fc7461&amp;type=3#SpiritShardsReferencia"/>
+    <ui:VisualElement name="Container" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/Backgrounds/SpiritShardBackground.png?fileID=2800000&amp;guid=b94b34206ce60da49af8f941e99ee44d&amp;type=3#SpiritShardBackground&quot;);">
+        <ui:Label text="FRAGMENTOS ESPIRITUALES" name="Title" style="-unity-text-align: middle-center; color: rgb(255, 255, 255); -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); font-size: 23px; margin-top: 9px;"/>
+        <ui:VisualElement name="Selected" style="flex-grow: 1;"/>
+        <ui:VisualElement name="Body" style="flex-grow: 1; height: 103px; flex-direction: row;">
+            <ui:VisualElement name="Options" style="flex-grow: 1; width: 318px; margin-left: 157px;"/>
+            <ui:VisualElement name="Info" style="flex-grow: 1;">
+                <ui:VisualElement name="SkillImage" style="flex-grow: 1; background-image: resource(&quot;Icons/Ori2/Skills/AncestralLight&quot;); aspect-ratio: 1; justify-content: center; align-items: center; align-self: center;"/>
+                <ui:Label text="Reduce los costes de energía" name="SkillInfo" style="-unity-text-align: middle-center; font-size: 12px; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); color: rgb(255, 255, 255);"/>
+                <ui:Label text="Sobrecarga" name="SkillName" style="-unity-text-align: middle-center; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); color: rgb(255, 255, 255); font-size: 16px;"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="Bottom" style="flex-grow: 1; max-height: 43px; display: flex;"/>
+    </ui:VisualElement>
+    <ui:Image source="project://database/Assets/Images/Imagenes_Referencia/SpiritShardsReferencia.png?fileID=2800000&amp;guid=8043dafa8a7534b42bea666af9fc7461&amp;type=3#SpiritShardsReferencia" enabled="true" style="overflow: visible; visibility: visible; display: flex; position: absolute; height: 344px; width: 672px; top: -6px; left: 0; opacity: 0.58;"/>
 </ui:UXML>
