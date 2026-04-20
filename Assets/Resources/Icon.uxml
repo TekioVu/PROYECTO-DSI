@@ -1,3 +1,3 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement name="R1" style="flex-grow: 1; aspect-ratio: 1; background-image: resource(&quot;Icons/Ori2/SkilsInShop/BlazeUpgraded&quot;);"/>
+    <ui:VisualElement name="R1" style="flex-grow: 1; background-image: resource(&quot;Icons/Ori2/SpiritShards/Magnet&quot;); -unity-background-image-tint-color: rgb(227, 245, 255); aspect-ratio: 1;"/>
 </ui:UXML>
