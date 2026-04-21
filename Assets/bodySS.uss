@@ -1,0 +1,49 @@
+:root {
+}
+
+.text {
+    position: absolute;
+    -unity-font-definition: url("project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&guid=e86290c5a134728479018e64543a6ebd&type=3#Star Shine");
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+}
+
+.text:hover {
+    position: absolute;
+    -unity-font-definition: url("project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&guid=e86290c5a134728479018e64543a6ebd&type=3#Star Shine");
+    color: rgb(255, 255, 255);
+    background-image: url("project://database/Assets/Images/pngwing.com.png?fileID=2800000&guid=5d922a28ab0ec3c42a0c2946e278801e&type=3#pngwing.com");
+    -unity-text-outline-width: 1px;
+    -unity-text-outline-color: rgb(29, 104, 164);
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+}
+
+.activeText {
+    position: absolute;
+    -unity-font-definition: url("project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&guid=e86290c5a134728479018e64543a6ebd&type=3#Star Shine");
+    color: rgb(255, 255, 255);
+    background-image: url("project://database/Assets/Images/pngwing.com.png?fileID=2800000&guid=5d922a28ab0ec3c42a0c2946e278801e&type=3#pngwing.com");
+    -unity-text-outline-width: 1px;
+    -unity-text-outline-color: rgb(0, 0, 0);
+}
+
+.normalText {
+    position: relative;
+    -unity-font-definition: url("project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&guid=e86290c5a134728479018e64543a6ebd&type=3#Star Shine");
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+}
+
+.slider-custom * {
+    background-color: transparent;
+    border-width: 0;
+    background-image: url("project://database/Assets/Resources/track.png?fileID=21300000&guid=1fe7fb50afc2e3240a60d76caec8d027&type=3#track");
+}
+
+.slider-custom .unity-base-slider__dragger {
+    background-image: url("project://database/Assets/Resources/handle.png?fileID=21300000&guid=d9dcf3ff29f1e984389f319b5bbfac1f&type=3#handle");
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0;
+    width: 20px;
+    height: 20px;
+}
