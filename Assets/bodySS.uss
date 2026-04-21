@@ -47,3 +47,15 @@
     width: 20px;
     height: 20px;
 }
+
+.text2 {
+    position: absolute;
+    -unity-font-definition: url("project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&guid=e86290c5a134728479018e64543a6ebd&type=3#Star Shine");
+    color: rgb(166, 66, 29);
+    font-size: 15px;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    -unity-text-outline-width: 1px;
+}

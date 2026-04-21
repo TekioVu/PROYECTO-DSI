@@ -9,12 +9,10 @@
         <ui:VisualElement name="MainMenu" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/Backgrounds/MainMenuBG.png?fileID=2800000&amp;guid=bd33c7d0b8815d0448551599b7a29450&amp;type=3#MainMenuBG&quot;); display: none;">
             <ui:VisualElement name="Title" style="flex-grow: 1; position: absolute; background-image: url(&quot;project://database/Assets/Images/Backgrounds/Ori_and_the_Will_of_the_Wisps_logo.png?fileID=2800000&amp;guid=019fd49276d47c14597a0bc649552e6f&amp;type=3#Ori_and_the_Will_of_the_Wisps_logo&quot;); width: 40%; height: 40%; top: 10%; left: 30%; right: 50%;"/>
             <ui:Label text="ABILITY TREE" name="abilityTree" emoji-fallback-support="true" class="text" style="font-size: 20px; top: 45%; left: 35%; width: 190px; -unity-text-align: upper-center; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); -unity-font-style: bold;"/>
-            <ui:Label text="MAP" name="map" class="text" style="font-size: 20px; top: 52%; left: 41%; width: 100px; -unity-text-align: upper-center; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); -unity-font-style: bold; height: 31px;"/>
-            <ui:Label text="INVENTORY" name="inventory" class="text" style="font-size: 20px; top: 59%; left: 37%; width: 171px; -unity-text-align: upper-center; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); -unity-font-style: bold;"/>
-            <ui:Label text="SHOP" name="shop" class="text" style="font-size: 20px; top: 66%; left: 40%; width: 121px; -unity-text-align: upper-center; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); -unity-font-style: bold;"/>
-            <ui:Label text="SELECT WEAPON" name="weaponSelection" class="text" style="font-size: 20px; top: 73%; left: 35%; width: 200px; -unity-text-align: upper-center; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); -unity-font-style: bold;"/>
-            <ui:Label text="SPIRIT SHARDS" name="spiritShards" selectable="false" focusable="false" class="text" style="font-size: 20px; top: 80%; left: 35%; width: 190px; -unity-text-align: upper-center; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); -unity-font-style: bold;"/>
-            <ui:Label text="EXIT" name="Exit" selectable="false" focusable="false" class="text" style="font-size: 20px; top: 87%; left: 41%; width: 100px; -unity-text-align: upper-center; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); -unity-font-style: bold;"/>
+            <ui:Label text="ORI&apos;S MENU" name="orisMenu" class="text" style="font-size: 20px; top: 55%; left: 41%; width: 100px; -unity-text-align: upper-center; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); -unity-font-style: bold; height: 31px;"/>
+            <ui:Label text="SHOP" name="shop" class="text" style="font-size: 20px; top: 65%; left: 40%; width: 121px; -unity-text-align: upper-center; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); -unity-font-style: bold;"/>
+            <ui:Label text="SELECT WEAPON" name="weaponSelection" class="text" style="font-size: 20px; top: 75%; left: 35%; width: 200px; -unity-text-align: upper-center; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); -unity-font-style: bold;"/>
+            <ui:Label text="EXIT" name="Exit" selectable="false" focusable="false" class="text" style="font-size: 20px; top: 85%; left: 41%; width: 100px; -unity-text-align: upper-center; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); -unity-font-style: bold;"/>
         </ui:VisualElement>
         <ui:VisualElement name="OptionsMenu" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/Backgrounds/MainMenuBG.png?fileID=2800000&amp;guid=bd33c7d0b8815d0448551599b7a29450&amp;type=3#MainMenuBG&quot;); display: none; background-color: rgba(0, 0, 0, 0.59); flex-direction: row; -unity-background-image-tint-color: rgb(255, 255, 255);">
             <ui:VisualElement name="OptionsBG" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.67); flex-direction: row;">
@@ -85,6 +83,32 @@
                     <ui:VisualElement name="achievmentsContent" style="flex-grow: 1; display: none;"/>
                 </ui:VisualElement>
             </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="OrisMenu" style="flex-grow: 1; display: none;">
+            <ui:VisualElement name="Map" style="flex-grow: 1; background-image: none;">
+                <ui:VisualElement name="map" style="flex-grow: 1;">
+                    <ui:Image name="mapImage" source="project://database/Assets/Images/mapaCompleto.jpg?fileID=2800000&amp;guid=4f5c4a6f92bf44d4da72f508670b699f&amp;type=3#mapaCompleto" scale-mode="StretchToFill" style="display: flex;"/>
+                </ui:VisualElement>
+                <ui:Label text="Map" name="mapText" class="normalText" style="font-size: 60px; -unity-text-align: middle-center; position: absolute; top: 10px; left: 356px; overflow: visible; visibility: visible;"/>
+                <ui:Label text="" name="missionDescription" class="text2" style="top: 77px; left: 263px; width: 269px; -unity-text-align: middle-center;"/>
+                <ui:VisualElement name="missions" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); position: absolute; height: 177px; width: 167px; top: 86px; left: 8px;">
+                    <ui:Label text="Cleanse the Waters" name="mission1" class="text" style="font-size: 15px; position: relative; -unity-text-align: upper-center;"/>
+                    <ui:Label text="Rekindle the Forlorn Ruins" name="mission2" class="text" style="font-size: 15px; position: relative; -unity-text-align: upper-center;"/>
+                    <ui:Label text="Restore the Winds" name="mission3" class="text" style="font-size: 15px; position: relative; -unity-text-align: upper-center;"/>
+                    <ui:Label text="Awaken the Spirit Tree" name="mission4" class="text" style="font-size: 15px; position: relative; -unity-text-align: upper-center;"/>
+                    <ui:Label text="Escape Kuro" name="mission5" class="text" style="font-size: 15px; position: relative; -unity-text-align: upper-center;"/>
+                    <ui:Label text="Find Ku" name="mission6" selectable="false" focusable="false" class="text" style="font-size: 15px; position: relative; -unity-text-align: upper-center;"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Inventory" style="flex-grow: 1; display: none; background-color: rgb(0, 0, 0);">
+                <ui:Label text="Inventory" name="mapText" class="normalText" style="font-size: 60px; -unity-text-align: middle-center; position: absolute; top: 10px; left: 356px; overflow: visible; visibility: visible;"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="SpiritShards" style="flex-grow: 1; display: none; background-color: rgb(0, 0, 0);">
+                <ui:Label text="Spirit shards" name="mapText" selectable="true" focusable="true" class="normalText" style="font-size: 60px; -unity-text-align: middle-center; position: absolute; top: 10px; left: 356px; overflow: visible; visibility: visible;"/>
+            </ui:VisualElement>
+            <ui:Label text="&gt;" name="rightArrow" class="text" style="font-size: 60px; position: absolute; top: 0; left: 735px;"/>
+            <ui:Label text="&lt;" name="leftArrow" class="text" style="font-size: 60px; position: absolute; top: 0; left: 22px;"/>
+            <ui:Label text="EXIT" name="exit" class="text" style="font-size: 30px; position: absolute; top: 397px; left: 718px;"/>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

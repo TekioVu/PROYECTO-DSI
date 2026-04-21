@@ -76,9 +76,20 @@ public class MainMenu : MonoBehaviour
         errorLabel.style.display = DisplayStyle.Flex;
     }
 
+    void SetupMissionHover(VisualElement mission, string description)
+    {
+        mission.RegisterCallback<MouseEnterEvent>(evt =>
+        {
+            misionDescription.text = description;
+        });
+
+        mission.RegisterCallback<MouseLeaveEvent>(evt =>
+        {
+            misionDescription.text = " ";
+        });
+    }
 
 
-  
 
     VisualElement startButton;
     VisualElement optionsButton;
@@ -90,6 +101,7 @@ public class MainMenu : MonoBehaviour
     List<PlayerEntry> leaderboard = new List<PlayerEntry>();
 
     Label errorLabel;
+    Label misionDescription;
     void OnEnable()
     {
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
@@ -291,5 +303,92 @@ public class MainMenu : MonoBehaviour
             controlsImage.image = keyboardTexture;
             controlText.text = "Keyboard";
         });
+
+        VisualElement orisMenuButton = mainMenu.Q<VisualElement>("orisMenu");
+        VisualElement orisMenu = root.Q<VisualElement>("OrisMenu");
+
+        VisualElement exitOrisMenu = orisMenu.Q<VisualElement>("exit");
+        VisualElement map = orisMenu.Q<VisualElement>("Map");
+        VisualElement inventory = orisMenu.Q<VisualElement>("Inventory");
+        VisualElement spiritShards = orisMenu.Q<VisualElement>("SpiritShards");
+
+        VisualElement leftArrowOrisMenu = orisMenu.Q<VisualElement>("leftArrow");
+        VisualElement rightArrowOrisMenu = orisMenu.Q<VisualElement>("rightArrow");
+
+        VisualElement currentMenu = map;
+
+        orisMenuButton.RegisterCallback<ClickEvent>(evt =>
+        {
+            mainMenu.style.display = DisplayStyle.None;
+            orisMenu.style.display = DisplayStyle.Flex;
+
+            map.style.display = DisplayStyle.Flex;
+            inventory.style.display = DisplayStyle.None;
+            spiritShards.style.display = DisplayStyle.None;
+            leftArrowOrisMenu.style.display = DisplayStyle.None;
+            rightArrowOrisMenu.style.display = DisplayStyle.Flex;
+            currentMenu = map;
+        });
+
+        rightArrowOrisMenu.RegisterCallback<ClickEvent>(evt =>
+        {
+            if(currentMenu == map)
+            {
+                currentMenu = inventory;
+                map.style.display = DisplayStyle.None;
+                inventory.style.display = DisplayStyle.Flex;
+                spiritShards.style.display = DisplayStyle.None;
+                leftArrowOrisMenu.style.display = DisplayStyle.Flex;
+            }
+            else if (currentMenu == inventory)
+            {
+                currentMenu = spiritShards;
+                map.style.display = DisplayStyle.None;
+                inventory.style.display = DisplayStyle.None;
+                spiritShards.style.display = DisplayStyle.Flex;
+                rightArrowOrisMenu.style.display = DisplayStyle.None;
+            }
+        });
+
+        leftArrowOrisMenu.RegisterCallback<ClickEvent>(evt =>
+        {
+            if (currentMenu == spiritShards)
+            {
+                currentMenu = inventory;
+                map.style.display = DisplayStyle.None;
+                inventory.style.display = DisplayStyle.Flex;
+                spiritShards.style.display = DisplayStyle.None;
+                rightArrowOrisMenu.style.display = DisplayStyle.Flex;
+            }
+            else if (currentMenu == inventory)
+            {
+                currentMenu = map;
+                map.style.display = DisplayStyle.Flex;
+                inventory.style.display = DisplayStyle.None;
+                spiritShards.style.display = DisplayStyle.None;
+                leftArrowOrisMenu.style.display = DisplayStyle.None;
+            }
+        });
+
+        exitOrisMenu.RegisterCallback<ClickEvent>(evt =>
+        {
+            mainMenu.style.display = DisplayStyle.Flex;
+            orisMenu.style.display = DisplayStyle.None;
+        });
+
+        misionDescription = orisMenu.Q<Label>("missionDescription");
+        VisualElement m1 = orisMenu.Q<VisualElement>("mission1");
+        VisualElement m2 = orisMenu.Q<VisualElement>("mission2");
+        VisualElement m3 = orisMenu.Q<VisualElement>("mission3");
+        VisualElement m4 = orisMenu.Q<VisualElement>("mission4");
+        VisualElement m5 = orisMenu.Q<VisualElement>("mission5");
+        VisualElement m6 = orisMenu.Q<VisualElement>("mission6");
+
+        SetupMissionHover(m1, "A spreading corruption must be purified before it consumes the remaining life of the forest.");
+        SetupMissionHover(m2, "Ancient mechanisms lie frozen and silent, waiting to be brought back to life.");
+        SetupMissionHover(m3, "New paths will open once the skies move again.");
+        SetupMissionHover(m4, "A fading source of light must be revived to protect everything that depends on it.");
+        SetupMissionHover(m5, "Survival depends on swift movement through collapsing and dangerous terrain.");
+        SetupMissionHover(m6, "A lost companion must be located somewhere in an unfamiliar land.");
     }
 }

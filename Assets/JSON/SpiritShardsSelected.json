@@ -2,32 +2,7 @@
     "icons": [
         {
             "imagen": "",
-            "nombre": "Finesse",
-            "descripcion": ""
-        },
-        {
-            "imagen": "",
-            "nombre": "Splinter",
-            "descripcion": ""
-        },
-        {
-            "imagen": "",
-            "nombre": "Last Stand",
-            "descripcion": ""
-        },
-        {
-            "imagen": "",
-            "nombre": "Fracture",
-            "descripcion": ""
-        },
-        {
-            "imagen": "",
-            "nombre": "Triple Jump",
-            "descripcion": ""
-        },
-        {
-            "imagen": "",
-            "nombre": "Magnet",
+            "nombre": "Arcing",
             "descripcion": ""
         },
         {
@@ -37,7 +12,32 @@
         },
         {
             "imagen": "",
-            "nombre": "Life Harvest",
+            "nombre": "Light Harvest",
+            "descripcion": ""
+        },
+        {
+            "imagen": "",
+            "nombre": "Magnet",
+            "descripcion": ""
+        },
+        {
+            "imagen": "",
+            "nombre": "Lifeforce",
+            "descripcion": ""
+        },
+        {
+            "imagen": "",
+            "nombre": "Bounty",
+            "descripcion": ""
+        },
+        {
+            "imagen": "",
+            "nombre": "Deflector",
+            "descripcion": ""
+        },
+        {
+            "imagen": "",
+            "nombre": "Spirit Surge",
             "descripcion": ""
         }
     ]
