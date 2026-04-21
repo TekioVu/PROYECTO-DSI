@@ -38,7 +38,7 @@ namespace SpiritShardNamespace
                     datos.Add(new Icon(sprite, d.nombre, d.descripcion));
                 }
 
-                Debug.Log("SpiritShard options cargadas desde JSON");
+                //Debug.Log("SpiritShard options cargadas desde JSON");
                 return datos;
             }
             else
@@ -85,7 +85,7 @@ namespace SpiritShardNamespace
                 }
             }
 
-            Debug.Log("Selected cargados correctamente");
+            //Debug.Log("Selected cargados correctamente");
             return selectedIcons;
         }
     }

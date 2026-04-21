@@ -14,6 +14,8 @@ namespace SpiritShardNamespace
         private Icon data;
         private bool selected = false;
         private bool displayIcon = false;
+
+        private VisualElement background;
         public Icon Data
         {
             get{return data;}
@@ -21,37 +23,57 @@ namespace SpiritShardNamespace
         public bool Selected
         {
             get{return selected;}
-            set{selected = value; }
+            set{selected = value; 
+            }
         }
 
         public bool DisplayIcon
         {
             get{return displayIcon;}
-            set{displayIcon = value;}
+            set{displayIcon = value;
+            style.width = 60;
+            style.height = 60;}
         }
 
         public IconElement(Icon icon)
         {
             data = icon;
 
+            style.width = 50;
+            style.height = 50;
+
+            background = new VisualElement();
+            background.style.position = Position.Absolute;
+            background.style.top = -8;
+            background.style.left = -8;
+            background.style.right = -8;
+            background.style.bottom = -8;
+
+            background.style.backgroundImage = new StyleBackground(
+                Resources.Load<Sprite>("Icons/SkillBackground")
+            );
+
+            background.style.unityBackgroundScaleMode = ScaleMode.ScaleToFit;
+
             icono = new VisualElement();
+            icono.style.position = Position.Absolute;
+            icono.style.top = 2;
+            icono.style.left = 2;
+            icono.style.right = 2;
+            icono.style.bottom = 2;
 
-            icono.style.flexGrow = 1;
-            icono.style.aspectRatio = 1;
             icono.style.unityBackgroundImageTintColor = new Color(227f/255f, 245f/255f, 255f/255f);
-
-            icono.style.width = 50;
-            icono.style.height = 50;
-
-            //icono.style.unityBackgroundScaleMode = ScaleMode.ScaleToFit;
+            icono.style.unityBackgroundScaleMode = ScaleMode.ScaleToFit;
 
             if (icon.Image != null)
             {
                 icono.style.backgroundImage = new StyleBackground(icon.Image);
             }
 
-            Add(icono);
+            Add(background); // abajo
+            Add(icono);      // encima
 
+            // Eventos
             RegisterCallback<MouseDownEvent>(OnMouseDown);
             RegisterCallback<MouseEnterEvent>(OnMouseEnter);
             RegisterCallback<MouseLeaveEvent>(OnMouseLeave);
@@ -61,7 +83,6 @@ namespace SpiritShardNamespace
         {
             data = icon;
             selected = true;
-
             icono.style.backgroundImage = icon.Image != null ? new StyleBackground(icon.Image) : null;
         }
 
