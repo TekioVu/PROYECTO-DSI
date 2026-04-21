@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UIElements;
+using System;
 
 namespace SpiritShardNamespace
 {
@@ -48,12 +49,24 @@ namespace SpiritShardNamespace
                 CrearIcono(icon);
             }
 
-            for(int i = 0; i < 8; i++)
+            List<Icon> selectedIconList = SpiritShardDatabase.getSelectedData();
+            if(selectedIconList.Count == 0)
             {
-                Sprite sprite = Resources.Load<Sprite>("Icons/Ori2/Skills/Flap");
-                Icon emptyIcon = new Icon(sprite, "Empty", "Select a spirit shard");
-                CrearSelectedIcons(emptyIcon);
+                for(int i = 0; i < 8; i++)
+                {
+                    Sprite sprite = Resources.Load<Sprite>("Icons/Ori2/Skills/Flap");
+                    Icon emptyIcon = new Icon(sprite, "Empty", "Select a spirit shard");
+                    CrearSelectedIcons(emptyIcon, false);
+                }
             }
+            else
+            {
+                foreach (Icon icon in selectedIconList)
+                {
+                    CrearSelectedIcons(icon, true);
+                }
+            }
+            
         }
 
         void CrearIcono(Icon icon)
@@ -78,16 +91,41 @@ namespace SpiritShardNamespace
             currentIndex++;
         }
 
-        void CrearSelectedIcons(Icon icon)
+        void CrearSelectedIcons(Icon icon, bool JSON)
         {
             IconElement elemento = new IconElement(icon);
             elemento.DisplayIcon = true;
+            elemento.Selected = JSON && icon.Name != "Empty" ? true : false;
             selectedIcons.Add(elemento);
 
             elemento.OnClicked += OnIconClicked;
             elemento.OnHovered += OnIconHovered;
 
             selectedContainer.Add(elemento);
+        }
+
+        void GuardarDatos()
+        {
+            List<IconData> dataToSave = new List<IconData>();
+
+            foreach (IconElement elem in selectedIcons)
+            {
+                if (elem.Data != null)
+                {
+                    dataToSave.Add(new IconData
+                    {
+                        nombre = elem.Data.Name,
+                    });
+                }
+            }
+
+            string json = JsonHelperIcon.ToJson(dataToSave, true);
+
+            string ruta = Application.dataPath + "/JSON/SpiritShardsSelected.json";
+
+            System.IO.File.WriteAllText(ruta, json);
+
+            //Debug.Log("Guardado correcto");
         }
 
         void OnIconHovered(Icon icon)
@@ -99,28 +137,29 @@ namespace SpiritShardNamespace
 
        void OnIconClicked(Icon icon, bool selected)
         {
-            if (selected)
-            {
+            if (selected){
                 foreach (IconElement slot in selectedIcons)
                 {
                     if (!slot.Selected)
                     {
                         slot.SetIcon(icon);
+                        GuardarDatos();
                         return;
                     }
                 }
             }
-            else
-            {
+            else{
                 foreach (IconElement slot in selectedIcons)
                 {
                     if (slot.Data.Name == icon.Name)
                     {
                         slot.SetEmpty();
+                        GuardarDatos();
                         return;
                     }
                 }
             }
+
         }
     }
 }

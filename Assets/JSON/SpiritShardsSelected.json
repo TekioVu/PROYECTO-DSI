@@ -1,46 +1,44 @@
 {
-    "individuos": [
+    "icons": [
         {
-            "image": {
-                "instanceID": 45960
-            },
-            "nombre": "Oso",
-            "apellido": "Oseador"
+            "imagen": "",
+            "nombre": "Empty",
+            "descripcion": ""
         },
         {
-            "image": {
-                "instanceID": 45964
-            },
-            "nombre": "Panda",
-            "apellido": "Pandero"
+            "imagen": "",
+            "nombre": "Empty",
+            "descripcion": ""
         },
         {
-            "image": {
-                "instanceID": 45956
-            },
-            "nombre": "Hormiguero",
-            "apellido": "Hormigueador"
+            "imagen": "",
+            "nombre": "Empty",
+            "descripcion": ""
         },
         {
-            "image": {
-                "instanceID": 45968
-            },
-            "nombre": "Rojo",
-            "apellido": "Sonrojado"
+            "imagen": "",
+            "nombre": "Empty",
+            "descripcion": ""
         },
         {
-            "image": {
-                "instanceID": 45956
-            },
-            "nombre": "SUPERALCACHOFA",
-            "apellido": "VIVA"
+            "imagen": "",
+            "nombre": "Empty",
+            "descripcion": ""
         },
         {
-            "image": {
-                "instanceID": 45960
-            },
-            "nombre": "SUPERALCACHOFA",
-            "apellido": "VIVA"
+            "imagen": "",
+            "nombre": "Empty",
+            "descripcion": ""
+        },
+        {
+            "imagen": "",
+            "nombre": "Empty",
+            "descripcion": ""
+        },
+        {
+            "imagen": "",
+            "nombre": "Empty",
+            "descripcion": ""
         }
     ]
 }

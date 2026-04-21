@@ -21,6 +21,7 @@ namespace SpiritShardNamespace
         public bool Selected
         {
             get{return selected;}
+            set{selected = value; }
         }
 
         public bool DisplayIcon
