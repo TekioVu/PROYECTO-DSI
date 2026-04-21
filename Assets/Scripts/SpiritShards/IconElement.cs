@@ -7,7 +7,7 @@ namespace SpiritShardNamespace
 {
     public class IconElement : VisualElement
     {
-        public event Action<Icon, bool> OnClicked;
+        public event Action<IconElement, Icon, bool> OnClicked;
         public event Action<Icon> OnHovered;
 
         private VisualElement icono;
@@ -24,6 +24,7 @@ namespace SpiritShardNamespace
         {
             get{return selected;}
             set{selected = value; 
+            background.style.unityBackgroundImageTintColor = selected ? new Color(1, 1, 1, 1) : new Color(0.25f, 0.25f, 0.25f, 1f);
             }
         }
 
@@ -31,16 +32,16 @@ namespace SpiritShardNamespace
         {
             get{return displayIcon;}
             set{displayIcon = value;
-            style.width = 60;
-            style.height = 60;}
+            style.width = 70;
+            style.height = 70;}
         }
 
         public IconElement(Icon icon)
         {
             data = icon;
 
-            style.width = 50;
-            style.height = 50;
+            style.width = 60;
+            style.height = 60;
 
             background = new VisualElement();
             background.style.position = Position.Absolute;
@@ -49,11 +50,10 @@ namespace SpiritShardNamespace
             background.style.right = -8;
             background.style.bottom = -8;
 
-            background.style.backgroundImage = new StyleBackground(
-                Resources.Load<Sprite>("Icons/SkillBackground")
-            );
+            background.style.backgroundImage = new StyleBackground(Resources.Load<Sprite>("Icons/SkillBackground"));
 
             background.style.unityBackgroundScaleMode = ScaleMode.ScaleToFit;
+            background.style.unityBackgroundImageTintColor = new Color(0.25f, 0.25f, 0.25f, 1f);
 
             icono = new VisualElement();
             icono.style.position = Position.Absolute;
@@ -70,8 +70,8 @@ namespace SpiritShardNamespace
                 icono.style.backgroundImage = new StyleBackground(icon.Image);
             }
 
-            Add(background); // abajo
-            Add(icono);      // encima
+            Add(background); 
+            Add(icono);      
 
             // Eventos
             RegisterCallback<MouseDownEvent>(OnMouseDown);
@@ -82,34 +82,39 @@ namespace SpiritShardNamespace
         public void SetIcon(Icon icon)
         {
             data = icon;
-            selected = true;
+            Selected = true;
             icono.style.backgroundImage = icon.Image != null ? new StyleBackground(icon.Image) : null;
         }
 
         public void SetEmpty()
         {
-            Sprite sprite = Resources.Load<Sprite>("Icons/Ori2/Skills/Flap");
+            Sprite sprite = Resources.Load<Sprite>("Icons/Ori1/AbilityTree/Combat/ChargeFlame");
             data = new Icon(sprite, "Empty", "Select a spirit shard");
             icono.style.backgroundImage = new StyleBackground(sprite);
 
-            selected = false;
+            Selected = false;
         }
 
         void OnMouseDown(MouseDownEvent evt)
         {
             if(!selected && displayIcon) return;
 
-            selected = !selected;
-            OnClicked?.Invoke(data, selected);
+            OnClicked?.Invoke(this, data, selected);
         }
 
         void OnMouseEnter(MouseEnterEvent evt)
         {
             OnHovered?.Invoke(data);
+
+            if(!selected)
+            background.style.unityBackgroundImageTintColor =new Color(1, 1, 1, 1);
+
         }
 
         void OnMouseLeave(MouseLeaveEvent evt)
         {
+            if(!selected)
+            background.style.unityBackgroundImageTintColor =  new Color(0.25f, 0.25f, 0.25f, 1f);
         }
     }
 }

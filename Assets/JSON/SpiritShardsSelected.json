@@ -3,11 +3,37 @@
         {
             "imagen": "",
             "nombre": "Arcing",
+            "nombre": "Overcharge",
             "descripcion": ""
         },
         {
             "imagen": "",
-            "nombre": "Vitality",
+            "nombre": "Quickshot",
+            "descripcion": ""
+        },
+        {
+            "imagen": "",
+            "nombre": "Spirit Surge",
+            "descripcion": ""
+        },
+        {
+            "imagen": "",
+            "nombre": "Empty",
+            "descripcion": ""
+        },
+        {
+            "imagen": "",
+            "nombre": "Empty",
+            "descripcion": ""
+        },
+        {
+            "imagen": "",
+            "nombre": "Empty",
+            "descripcion": ""
+        },
+        {
+            "imagen": "",
+            "nombre": "Empty",
             "descripcion": ""
         },
         {
@@ -38,6 +64,7 @@
         {
             "imagen": "",
             "nombre": "Spirit Surge",
+            "nombre": "Empty",
             "descripcion": ""
         }
     ]
