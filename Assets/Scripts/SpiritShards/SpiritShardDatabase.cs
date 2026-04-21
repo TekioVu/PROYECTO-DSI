@@ -30,8 +30,6 @@ namespace SpiritShardNamespace
                 foreach (var d in datosJson)
                 {
                     Sprite sprite = Resources.Load<Sprite>(d.imagen);
-                    Debug.Log($"PATH: {d.imagen} -> {(sprite == null ? "NULL" : "OK")}");
-
                     if (sprite == null)
                     {
                         Debug.LogWarning("Sprite no encontrado: " + d.imagen);
