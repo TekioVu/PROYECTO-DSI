@@ -76,7 +76,7 @@ namespace SpiritShardNamespace
                     selectedIcons.Add(match);
                 }else if(selected.nombre == "Empty")
                 {
-                    Sprite sprite = Resources.Load<Sprite>("Icons/Ori2/Skills/Flap");
+                    Sprite sprite = Resources.Load<Sprite>("Icons/Ori1/AbilityTree/Combat/ChargeFlame");
                     selectedIcons.Add(new Icon(sprite, "Empty", "Select a spirit shard"));
                 }
                 else

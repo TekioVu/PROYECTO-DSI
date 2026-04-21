@@ -11,6 +11,7 @@ namespace SpiritShardNamespace
         VisualElement displayContainer;
         VisualElement selectedContainer;
         List<VisualElement> rows;
+        List<IconElement> options;
 
         int iconsPerRow = 8;
         int currentIndex = 0;
@@ -33,6 +34,7 @@ namespace SpiritShardNamespace
             currentDesc = displayContainer.Q<Label>("SkillInfo");
 
             selectedIcons = new List<IconElement>();
+            options = new List<IconElement>();
 
             rows = new List<VisualElement>
             {
@@ -54,7 +56,7 @@ namespace SpiritShardNamespace
             {
                 for(int i = 0; i < 8; i++)
                 {
-                    Sprite sprite = Resources.Load<Sprite>("Icons/Ori2/Skills/Flap");
+                    Sprite sprite = Resources.Load<Sprite>("Icons/Ori1/AbilityTree/Combat/ChargeFlame");
                     Icon emptyIcon = new Icon(sprite, "Empty", "Select a spirit shard");
                     CrearSelectedIcons(emptyIcon, false);
                 }
@@ -86,6 +88,7 @@ namespace SpiritShardNamespace
             elemento.OnClicked += OnIconClicked;
             elemento.OnHovered += OnIconHovered;
 
+            options.Add(elemento);
             row.Add(elemento);
 
             currentIndex++;
@@ -96,8 +99,9 @@ namespace SpiritShardNamespace
             IconElement elemento = new IconElement(icon);
             elemento.DisplayIcon = true;
             elemento.Selected = JSON && icon.Name != "Empty" ? true : false;
+            if(JSON && icon.Name != "Empty") DesactivarIcono(icon.Name, true);
             selectedIcons.Add(elemento);
-
+            
             elemento.OnClicked += OnIconClicked;
             elemento.OnHovered += OnIconHovered;
 
@@ -135,14 +139,15 @@ namespace SpiritShardNamespace
             currentDesc.text = icon.Info;
         }
 
-       void OnIconClicked(Icon icon, bool selected)
+       void OnIconClicked(IconElement ie, Icon icon, bool selected)
         {
-            if (selected){
+            if (!selected){
                 foreach (IconElement slot in selectedIcons)
                 {
                     if (!slot.Selected)
                     {
                         slot.SetIcon(icon);
+                        ie.Selected = true;
                         GuardarDatos();
                         return;
                     }
@@ -154,12 +159,26 @@ namespace SpiritShardNamespace
                     if (slot.Data.Name == icon.Name)
                     {
                         slot.SetEmpty();
+                        ie.Selected = false;
+                        DesactivarIcono(icon.Name, false);
                         GuardarDatos();
                         return;
                     }
                 }
             }
 
+        }
+
+        void DesactivarIcono(string name, bool activar)
+        {
+            foreach (IconElement ie in options)
+                {
+                    if (ie.Data.Name == name)
+                    {
+                        ie.Selected = activar;
+                        return;
+                    }
+                }
         }
     }
 }
