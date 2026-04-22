@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UIElements;
@@ -23,6 +24,7 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private Texture2D controllerTexture;
     [SerializeField] private Texture2D keyboardTexture;
+    [SerializeField] private Texture2D circleTexture;
     void RefreshLeaderboard()
     {
         leaderboardContainer.Clear();
@@ -398,5 +400,158 @@ public class MainMenu : MonoBehaviour
         SetupMissionHover(m4, "A fading source of light must be revived to protect everything that depends on it.");
         SetupMissionHover(m5, "Survival depends on swift movement through collapsing and dangerous terrain.");
         SetupMissionHover(m6, "A lost companion must be located somewhere in an unfamiliar land.");
+
+        VisualElement mapImage;
+        VisualElement container;
+
+        float zoom = 2.0f;     
+        float minZoom = 1.0f;
+        float maxZoom = 5.0f;
+
+        Vector2 offset = Vector2.zero;
+        bool dragging = false;
+        Vector2 lastMousePos = Vector2.zero;
+
+        container = root.Q<VisualElement>("map");
+        mapImage = root.Q<VisualElement>("mapContent");
+
+        ApplyTransform();
+
+        container.RegisterCallback<WheelEvent>(evt =>
+        {
+            float zoomChange = -evt.delta.y * 0.01f;
+            zoom = Mathf.Clamp(zoom + zoomChange, minZoom, maxZoom);
+
+            ApplyTransform();
+        });
+
+        container.RegisterCallback<MouseDownEvent>(evt =>
+        {
+            dragging = true;
+            lastMousePos = evt.mousePosition;
+        });
+
+        container.RegisterCallback<MouseUpEvent>(evt =>
+        {
+            dragging = false;
+        });
+
+        container.RegisterCallback<MouseMoveEvent>(evt =>
+        {
+            if (!dragging) return;
+
+            Vector2 delta = evt.mousePosition - lastMousePos;
+            offset += delta;
+
+            lastMousePos = evt.mousePosition;
+
+            ClampOffset();
+            ApplyTransform();
+        });
+
+        void ClampOffset()
+        {
+            float containerWidth = container.resolvedStyle.width;
+            float containerHeight = container.resolvedStyle.height;
+
+            float imageWidth = mapImage.resolvedStyle.width * zoom;
+            float imageHeight = mapImage.resolvedStyle.height * zoom;
+
+            float maxX = (imageWidth - containerWidth) / 2f;
+            float maxY = (imageHeight - containerHeight) / 2f;
+
+            offset.x = Mathf.Clamp(offset.x, -maxX, maxX);
+            offset.y = Mathf.Clamp(offset.y, -maxY, maxY);
+        }
+
+        void ApplyTransform()
+        {
+            mapImage.transform.scale = new Vector3(zoom, zoom, 1);
+            mapImage.transform.position = offset;
+        }
+
+        Label displayItems = orisMenu.Q<Label>("displayMapItems");
+        VisualElement mapItems = orisMenu.Q<VisualElement>("mapItems");
+        VisualElement mapLegend = orisMenu.Q<VisualElement>("mapLegend");
+        mapItems.style.display = DisplayStyle.None;
+        mapLegend.style.display = DisplayStyle.None;
+        displayItems.text = "Show items";
+        displayItems.RegisterCallback<ClickEvent>(evt =>
+        {
+            if (mapItems.style.display == DisplayStyle.None)
+            {
+                mapItems.style.display = DisplayStyle.Flex;
+                mapLegend.style.display = DisplayStyle.Flex;
+                displayItems.text = "Hide items";
+            }
+            else
+            {
+                mapItems.style.display = DisplayStyle.None;
+                mapLegend.style.display = DisplayStyle.None;
+                displayItems.text = "Show items";
+            }
+        });
+
+        void SetBackgroundRecursive(VisualElement parent, Texture2D texture)
+        {
+            foreach (var child in parent.Children())
+            {
+                if (texture == null)
+                    child.style.backgroundImage = StyleKeyword.None;
+                else
+                    child.style.backgroundImage = new StyleBackground(texture);
+            }
+        }
+        Label lifeCellsText = orisMenu.Q<Label>("lifeCellsLegendText");
+        VisualElement lifeCellsImages = orisMenu.Q<VisualElement>("lifeCells");
+
+        lifeCellsText.RegisterCallback<MouseEnterEvent>(evt =>
+        {
+            SetBackgroundRecursive(lifeCellsImages, circleTexture);
+        });
+
+        lifeCellsText.RegisterCallback<MouseLeaveEvent>(evt =>
+        {
+            SetBackgroundRecursive(lifeCellsImages, null);
+        });
+
+        Label energyCellsText = orisMenu.Q<Label>("energyCellsLegendText");
+        VisualElement energyCellsImages = orisMenu.Q<VisualElement>("energyCells");
+
+        energyCellsText.RegisterCallback<MouseEnterEvent>(evt =>
+        {
+            SetBackgroundRecursive(energyCellsImages, circleTexture);
+        });
+
+        energyCellsText.RegisterCallback<MouseLeaveEvent>(evt =>
+        {
+            SetBackgroundRecursive(energyCellsImages, null);
+        });
+
+        Label abilityText = orisMenu.Q<Label>("abilityPointsLegendText");
+        VisualElement abilityPointsImages = orisMenu.Q<VisualElement>("abilityPoints");
+
+        abilityText.RegisterCallback<MouseEnterEvent>(evt =>
+        {
+            SetBackgroundRecursive(abilityPointsImages, circleTexture);
+        });
+
+        abilityText.RegisterCallback<MouseLeaveEvent>(evt =>
+        {
+            SetBackgroundRecursive(abilityPointsImages, null);
+        });
+
+        Label oriText = orisMenu.Q<Label>("oriLegendText");
+        VisualElement oriImages = orisMenu.Q<VisualElement>("ori");
+
+        oriText.RegisterCallback<MouseEnterEvent>(evt =>
+        {
+            SetBackgroundRecursive(oriImages, circleTexture);
+        });
+
+        oriText.RegisterCallback<MouseLeaveEvent>(evt =>
+        {
+            SetBackgroundRecursive(oriImages, null);
+        });
     }
 }

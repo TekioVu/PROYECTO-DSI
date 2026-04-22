@@ -323,7 +323,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &969010812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,6 +338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
   controllerTexture: {fileID: 2800000, guid: 82fe560bb16c6f94e99dfb05d954cbc9, type: 3}
   keyboardTexture: {fileID: 2800000, guid: 2d908f534fa8ef54bb5604e04ac0099a, type: 3}
+  circleTexture: {fileID: 2800000, guid: 6088df3c1b7a44a4084893a731da3618, type: 3}
 --- !u!114 &969010813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,7 +406,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1089387985
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/USS/bodySS.uss?fileID=7433441132597879392&amp;guid=af7353dc526a13c409ebd57c26236ba8&amp;type=3#bodySS"/>
-    <ui:VisualElement name="Juego" style="flex-grow: 1;">
-        <ui:VisualElement name="InitMenu" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/Backgrounds/MainMenuBG.png?fileID=2800000&amp;guid=bd33c7d0b8815d0448551599b7a29450&amp;type=3#MainMenuBG&quot;); display: none;">
+    <ui:VisualElement name="Juego" style="flex-grow: 1; background-color: rgb(0, 0, 0);">
+        <ui:VisualElement name="InitMenu" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/Backgrounds/MainMenuBG.png?fileID=2800000&amp;guid=bd33c7d0b8815d0448551599b7a29450&amp;type=3#MainMenuBG&quot;); display: flex;">
             <ui:VisualElement name="Title" style="flex-grow: 1; position: absolute; background-image: url(&quot;project://database/Assets/Images/Backgrounds/Ori_and_the_Will_of_the_Wisps_logo.png?fileID=2800000&amp;guid=019fd49276d47c14597a0bc649552e6f&amp;type=3#Ori_and_the_Will_of_the_Wisps_logo&quot;); width: 40%; height: 40%; top: 20%; left: 31%; right: 50%;"/>
             <ui:Label text="START" name="Init" class="text" style="font-size: 20px; top: 60%; left: 41%; width: 141px; -unity-text-align: middle-center; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); -unity-font-style: bold;"/>
             <ui:Label text="OPTIONS" name="Options" class="text" style="font-size: 20px; top: 70%; left: 41%; width: 141px; -unity-text-align: middle-center; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); -unity-font-style: bold;"/>
@@ -13,7 +13,7 @@
             <ui:Label text="SELECT WEAPON" name="weaponSelection" class="text" style="font-size: 20px; top: 70%; left: 35%; width: 200px; -unity-text-align: upper-center; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); -unity-font-style: bold;"/>
             <ui:Label text="EXIT" name="Exit" selectable="false" focusable="false" class="text" style="font-size: 20px; top: 80%; left: 41%; width: 100px; -unity-text-align: upper-center; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); -unity-font-style: bold;"/>
         </ui:VisualElement>
-        <ui:VisualElement name="OptionsMenu" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/Backgrounds/MainMenuBG.png?fileID=2800000&amp;guid=bd33c7d0b8815d0448551599b7a29450&amp;type=3#MainMenuBG&quot;); display: flex; background-color: rgba(0, 0, 0, 0.59); flex-direction: row; -unity-background-image-tint-color: rgb(255, 255, 255);">
+        <ui:VisualElement name="OptionsMenu" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/Backgrounds/MainMenuBG.png?fileID=2800000&amp;guid=bd33c7d0b8815d0448551599b7a29450&amp;type=3#MainMenuBG&quot;); display: none; background-color: rgba(0, 0, 0, 0.59); flex-direction: row; -unity-background-image-tint-color: rgb(255, 255, 255);">
             <ui:VisualElement name="OptionsBG" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.67); flex-direction: row;">
                 <ui:VisualElement name="options" style="flex-grow: 1; width: 30%; margin-top: 50px; margin-left: 50px;">
                     <ui:Label text="SETTINGS" name="settings" class="text" style="-unity-text-align: upper-center; top: 0;"/>
@@ -86,7 +86,52 @@
         <ui:VisualElement name="OrisMenu" style="flex-grow: 1; display: none;">
             <ui:VisualElement name="Map" style="flex-grow: 1; background-image: none;">
                 <ui:VisualElement name="map" style="flex-grow: 1;">
-                    <ui:Image name="mapImage" source="project://database/Assets/Images/mapaCompleto.jpg?fileID=2800000&amp;guid=4f5c4a6f92bf44d4da72f508670b699f&amp;type=3#mapaCompleto" scale-mode="StretchToFill" style="display: flex;"/>
+                    <ui:VisualElement name="mapContent" style="flex-grow: 1;">
+                        <ui:Image name="mapImage" source="project://database/Assets/Images/mapaCompleto.jpg?fileID=2800000&amp;guid=4f5c4a6f92bf44d4da72f508670b699f&amp;type=3#mapaCompleto" scale-mode="StretchToFill" style="display: flex;"/>
+                        <ui:VisualElement name="mapItems" style="flex-grow: 1;">
+                            <ui:VisualElement name="lifeCells" style="flex-grow: 1;">
+                                <ui:Image name="lifeCelIImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/LifeCell.png?fileID=2800000&amp;guid=72b19719bfa042b41a4324d5a341149e&amp;type=3#LifeCell" style="position: absolute; width: 10px; height: 10px; top: -89px; left: 83px;"/>
+                                <ui:Image name="lifeCelIImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/LifeCell.png?fileID=2800000&amp;guid=72b19719bfa042b41a4324d5a341149e&amp;type=3#LifeCell" style="position: absolute; width: 10px; height: 10px; top: -74px; left: 302px;"/>
+                                <ui:Image name="lifeCelIImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/LifeCell.png?fileID=2800000&amp;guid=72b19719bfa042b41a4324d5a341149e&amp;type=3#LifeCell" style="position: absolute; width: 10px; height: 10px; top: -125px; left: 468px;"/>
+                                <ui:Image name="lifeCelIImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/LifeCell.png?fileID=2800000&amp;guid=72b19719bfa042b41a4324d5a341149e&amp;type=3#LifeCell" style="position: absolute; width: 10px; height: 10px; top: -43px; left: 700px;"/>
+                                <ui:Image name="lifeCelIImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/LifeCell.png?fileID=2800000&amp;guid=72b19719bfa042b41a4324d5a341149e&amp;type=3#LifeCell" style="position: absolute; width: 10px; height: 10px; top: -140px; left: 744px;"/>
+                                <ui:Image name="lifeCelIImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/LifeCell.png?fileID=2800000&amp;guid=72b19719bfa042b41a4324d5a341149e&amp;type=3#LifeCell" style="position: absolute; width: 10px; height: 10px; top: -254px; left: 609px;"/>
+                                <ui:Image name="lifeCelIImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/LifeCell.png?fileID=2800000&amp;guid=72b19719bfa042b41a4324d5a341149e&amp;type=3#LifeCell" style="position: absolute; width: 10px; height: 10px; top: -266px; left: 424px;"/>
+                                <ui:Image name="lifeCelIImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/LifeCell.png?fileID=2800000&amp;guid=72b19719bfa042b41a4324d5a341149e&amp;type=3#LifeCell" style="position: absolute; width: 10px; height: 10px; top: -331px; left: 209px;"/>
+                                <ui:Image name="lifeCelIImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/LifeCell.png?fileID=2800000&amp;guid=72b19719bfa042b41a4324d5a341149e&amp;type=3#LifeCell" style="position: absolute; width: 10px; height: 10px; top: -178px; left: 289px;"/>
+                                <ui:Image name="lifeCelIImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/LifeCell.png?fileID=2800000&amp;guid=72b19719bfa042b41a4324d5a341149e&amp;type=3#LifeCell" style="position: absolute; width: 10px; height: 10px; top: -414px; left: 602px;"/>
+                            </ui:VisualElement>
+                            <ui:VisualElement name="energyCells" style="flex-grow: 1;">
+                                <ui:Image name="energyCellImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/EnergyCell.png?fileID=2800000&amp;guid=7faf259b862a62646a99503962a94333&amp;type=3#EnergyCell" style="position: absolute; width: 10px; height: 10px; top: -113px; left: 270px;"/>
+                                <ui:Image name="energyCellImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/EnergyCell.png?fileID=2800000&amp;guid=7faf259b862a62646a99503962a94333&amp;type=3#EnergyCell" style="position: absolute; width: 10px; height: 10px; top: -161px; left: 382px;"/>
+                                <ui:Image name="energyCellImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/EnergyCell.png?fileID=2800000&amp;guid=7faf259b862a62646a99503962a94333&amp;type=3#EnergyCell" style="position: absolute; width: 10px; height: 10px; top: -231px; left: 405px;"/>
+                                <ui:Image name="energyCellImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/EnergyCell.png?fileID=2800000&amp;guid=7faf259b862a62646a99503962a94333&amp;type=3#EnergyCell" style="position: absolute; width: 10px; height: 10px; top: -47px; left: 547px;"/>
+                                <ui:Image name="energyCellImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/EnergyCell.png?fileID=2800000&amp;guid=7faf259b862a62646a99503962a94333&amp;type=3#EnergyCell" style="position: absolute; width: 10px; height: 10px; top: -266px; left: 507px;"/>
+                                <ui:Image name="energyCellImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/EnergyCell.png?fileID=2800000&amp;guid=7faf259b862a62646a99503962a94333&amp;type=3#EnergyCell" style="position: absolute; width: 10px; height: 10px; top: -280px; left: 269px;"/>
+                                <ui:Image name="energyCellImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/EnergyCell.png?fileID=2800000&amp;guid=7faf259b862a62646a99503962a94333&amp;type=3#EnergyCell" style="position: absolute; width: 10px; height: 10px; top: -160px; left: 26px;"/>
+                                <ui:Image name="energyCellImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/EnergyCell.png?fileID=2800000&amp;guid=7faf259b862a62646a99503962a94333&amp;type=3#EnergyCell" style="position: absolute; width: 10px; height: 10px; top: -198px; left: 598px;"/>
+                                <ui:Image name="energyCellImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/EnergyCell.png?fileID=2800000&amp;guid=7faf259b862a62646a99503962a94333&amp;type=3#EnergyCell" style="position: absolute; width: 10px; height: 10px; top: -160px; left: 258px;"/>
+                                <ui:Image name="energyCellImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/EnergyCell.png?fileID=2800000&amp;guid=7faf259b862a62646a99503962a94333&amp;type=3#EnergyCell" style="position: absolute; width: 10px; height: 10px; top: -44px; left: 164px;"/>
+                            </ui:VisualElement>
+                            <ui:VisualElement name="ori" style="flex-grow: 1;">
+                                <ui:Image name="oriImage" source="project://database/Assets/Resources/Icons/oriIcon%20(2).png?fileID=2800000&amp;guid=3e02ba1b24d35d2469971a3db28f6d12&amp;type=3#oriIcon (2)" style="position: absolute; width: 10px; height: 10px; top: -129px; left: 381px; background-size: 140% 140%;"/>
+                            </ui:VisualElement>
+                            <ui:VisualElement name="abilityPoints" style="flex-grow: 1;">
+                                <ui:Image name="abilityPointImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/SpiritCell.png?fileID=2800000&amp;guid=6468421413c8ea64cabe085d75ad19ff&amp;type=3#SpiritCell" style="width: 10px; height: 10px; position: absolute; top: -202px; left: 212px;"/>
+                                <ui:Image name="abilityPointImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/SpiritCell.png?fileID=2800000&amp;guid=6468421413c8ea64cabe085d75ad19ff&amp;type=3#SpiritCell" style="width: 10px; height: 10px; position: absolute; top: -289px; left: 170px;"/>
+                                <ui:Image name="abilityPointImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/SpiritCell.png?fileID=2800000&amp;guid=6468421413c8ea64cabe085d75ad19ff&amp;type=3#SpiritCell" style="width: 10px; height: 10px; position: absolute; top: -91px; left: 171px;"/>
+                                <ui:Image name="abilityPointImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/SpiritCell.png?fileID=2800000&amp;guid=6468421413c8ea64cabe085d75ad19ff&amp;type=3#SpiritCell" style="width: 10px; height: 10px; position: absolute; top: -154px; left: 167px;"/>
+                                <ui:Image name="abilityPointImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/SpiritCell.png?fileID=2800000&amp;guid=6468421413c8ea64cabe085d75ad19ff&amp;type=3#SpiritCell" style="width: 10px; height: 10px; position: absolute; top: -87px; left: 456px;"/>
+                                <ui:Image name="abilityPointImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/SpiritCell.png?fileID=2800000&amp;guid=6468421413c8ea64cabe085d75ad19ff&amp;type=3#SpiritCell" style="width: 10px; height: 10px; position: absolute; top: -157px; left: 514px;"/>
+                                <ui:Image name="abilityPointImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/SpiritCell.png?fileID=2800000&amp;guid=6468421413c8ea64cabe085d75ad19ff&amp;type=3#SpiritCell" style="width: 10px; height: 10px; position: absolute; top: -139px; left: 595px;"/>
+                                <ui:Image name="abilityPointImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/SpiritCell.png?fileID=2800000&amp;guid=6468421413c8ea64cabe085d75ad19ff&amp;type=3#SpiritCell" style="width: 10px; height: 10px; position: absolute; top: -109px; left: 604px;"/>
+                                <ui:Image name="abilityPointImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/SpiritCell.png?fileID=2800000&amp;guid=6468421413c8ea64cabe085d75ad19ff&amp;type=3#SpiritCell" style="width: 10px; height: 10px; position: absolute; top: -134px; left: 727px;"/>
+                                <ui:Image name="abilityPointImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/SpiritCell.png?fileID=2800000&amp;guid=6468421413c8ea64cabe085d75ad19ff&amp;type=3#SpiritCell" style="width: 10px; height: 10px; position: absolute; top: -313px; left: 622px;"/>
+                                <ui:Image name="abilityPointImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/SpiritCell.png?fileID=2800000&amp;guid=6468421413c8ea64cabe085d75ad19ff&amp;type=3#SpiritCell" style="width: 10px; height: 10px; position: absolute; top: -270px; left: 462px;"/>
+                                <ui:Image name="abilityPointImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/SpiritCell.png?fileID=2800000&amp;guid=6468421413c8ea64cabe085d75ad19ff&amp;type=3#SpiritCell" style="width: 10px; height: 10px; position: absolute; top: -245px; left: 267px;"/>
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                    </ui:VisualElement>
                 </ui:VisualElement>
                 <ui:Label text="Map" name="mapText" class="normalText" style="font-size: 60px; -unity-text-align: middle-center; position: absolute; top: 10px; left: 356px; overflow: visible; visibility: visible;"/>
                 <ui:Label text="" name="missionDescription" emoji-fallback-support="false" class="text2" style="top: 77px; left: 263px; width: 269px; -unity-text-align: middle-center; color: rgb(206, 179, 98);"/>
@@ -98,11 +143,30 @@
                     <ui:Label text="Escape Kuro" name="mission5" class="text" style="font-size: 15px; position: relative; -unity-text-align: upper-center;"/>
                     <ui:Label text="Find Ku" name="mission6" selectable="false" focusable="false" class="text" style="font-size: 15px; position: relative; -unity-text-align: upper-center;"/>
                 </ui:VisualElement>
+                <ui:VisualElement name="mapLegend" style="flex-grow: 1; position: absolute; top: 88px; left: 674px; height: 134px; width: 111px;">
+                    <ui:VisualElement name="lifeCellsLegend" style="flex-grow: 1; flex-direction: row; align-items: center; justify-content: flex-start; align-self: stretch;">
+                        <ui:Image name="lifeCellsLegendImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/LifeCell.png?fileID=2800000&amp;guid=72b19719bfa042b41a4324d5a341149e&amp;type=3#LifeCell" style="width: 30px; height: 30px;"/>
+                        <ui:Label text="Life cells" name="lifeCellsLegendText" class="text" style="font-size: 15px; position: relative;"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="energyCellsLegend" style="flex-grow: 1; flex-direction: row; align-items: center;">
+                        <ui:Image name="energyCellsLegendImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/EnergyCell.png?fileID=2800000&amp;guid=7faf259b862a62646a99503962a94333&amp;type=3#EnergyCell" style="width: 30px; height: 30px;"/>
+                        <ui:Label text="Energy cells" name="energyCellsLegendText" class="text" style="font-size: 15px; position: relative;"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="abilityPointsLegend" style="flex-grow: 1; flex-direction: row; align-items: center;">
+                        <ui:Image name="abilityPointsLegendImage" source="project://database/Assets/Resources/Icons/Ori2/OtherIcons/SpiritCell.png?fileID=2800000&amp;guid=6468421413c8ea64cabe085d75ad19ff&amp;type=3#SpiritCell" style="width: 30px; height: 30px;"/>
+                        <ui:Label text="Ability points" name="abilityPointsLegendText" class="text" style="font-size: 15px; position: relative;"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="oriLegend" style="flex-grow: 1; flex-direction: row; align-items: center;">
+                        <ui:Image name="oriLegendImage" source="project://database/Assets/Resources/Icons/oriIcon%20(2).png?fileID=2800000&amp;guid=3e02ba1b24d35d2469971a3db28f6d12&amp;type=3#oriIcon (2)" style="width: 30px; height: 30px;"/>
+                        <ui:Label text="Ori" name="oriLegendText" class="text" style="font-size: 15px; position: relative; -unity-text-align: upper-left;"/>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:Label text="Show items" name="displayMapItems" class="text" style="font-size: 30px; position: absolute; top: 397px; left: 20px;"/>
             </ui:VisualElement>
             <ui:VisualElement name="Inventory" style="flex-grow: 1; display: none; background-color: rgb(0, 0, 0);">
                 <ui:Label text="Inventory" name="mapText" class="normalText" style="font-size: 60px; -unity-text-align: middle-center; position: absolute; top: 10px; left: 356px; overflow: visible; visibility: visible;"/>
             </ui:VisualElement>
-            <ui:VisualElement name="SpiritShards" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/Backgrounds/cd3db37f-f138-4c80-af52-3895c7e756e5.png?fileID=2800000&amp;guid=b94b34206ce60da49af8f941e99ee44d&amp;type=3#cd3db37f-f138-4c80-af52-3895c7e756e5&quot;); flex-shrink: 1;">
+            <ui:VisualElement name="SpiritShards" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/Backgrounds/cd3db37f-f138-4c80-af52-3895c7e756e5.png?fileID=2800000&amp;guid=b94b34206ce60da49af8f941e99ee44d&amp;type=3#cd3db37f-f138-4c80-af52-3895c7e756e5&quot;); flex-shrink: 1; display: none;">
                 <ui:Label text="SPIRIT SHARDS" name="Title" style="-unity-text-align: middle-center; color: rgb(255, 255, 255); -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); font-size: 30px; margin-top: 9px; flex-grow: 1; flex-shrink: 1;"/>
                 <ui:VisualElement name="Selected" style="flex-grow: 1; margin-left: 100px; margin-right: 100px; max-height: 60px; flex-direction: row; justify-content: center;"/>
                 <ui:VisualElement name="Body" style="flex-grow: 1; height: auto; flex-direction: row; min-height: 103px; max-height: none; margin-top: 2%;">

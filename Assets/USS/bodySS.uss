@@ -85,3 +85,6 @@
 
 .shard-button {
 }
+    #MapContainer {
+    overflow: hidden;
+}
