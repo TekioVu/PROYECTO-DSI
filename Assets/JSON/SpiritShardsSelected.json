@@ -2,22 +2,22 @@
     "icons": [
         {
             "imagen": "",
-            "nombre": "Life Pact",
+            "nombre": "Overcharge",
             "descripcion": ""
         },
         {
             "imagen": "",
-            "nombre": "Thorn",
+            "nombre": "Energy",
             "descripcion": ""
         },
         {
             "imagen": "",
-            "nombre": "Fracture",
+            "nombre": "Swap",
             "descripcion": ""
         },
         {
             "imagen": "",
-            "nombre": "Ultra Grapple",
+            "nombre": "Arcing",
             "descripcion": ""
         },
         {
@@ -27,17 +27,17 @@
         },
         {
             "imagen": "",
-            "nombre": "Resilience",
+            "nombre": "Ultra Bash",
             "descripcion": ""
         },
         {
             "imagen": "",
-            "nombre": "Quickshot",
+            "nombre": "Turmoil",
             "descripcion": ""
         },
         {
             "imagen": "",
-            "nombre": "Sticky",
+            "nombre": "Last Stand",
             "descripcion": ""
         }
     ]
