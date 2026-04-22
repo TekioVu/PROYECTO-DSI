@@ -200,6 +200,14 @@ public class MainMenu : MonoBehaviour
         StyleSlider(root.Q<Slider>("vibrationSlider"));
         StyleSlider(root.Q<Slider>("brightnessSlider"));
 
+        void StyleToggle(Toggle toggle)
+        {
+            toggle.AddToClassList("toggle-custom");
+        }
+
+        StyleToggle(root.Q<Toggle>("damageValueToggle"));
+        StyleToggle(root.Q<Toggle>("ShowMapTrailToggle"));
+
         TextField nameInput;
         TextField timeInput;
         TextField progressInput;

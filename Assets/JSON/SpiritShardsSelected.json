@@ -2,8 +2,32 @@
     "icons": [
         {
             "imagen": "",
-            "nombre": "Arcing",
             "nombre": "Overcharge",
+            "descripcion": ""
+        },
+        {
+            "imagen": "",
+            "nombre": "Life Harvest",
+            "descripcion": ""
+        },
+        {
+            "imagen": "",
+            "nombre": "Thorn",
+            "descripcion": ""
+        },
+        {
+            "imagen": "",
+            "nombre": "Last Stand",
+            "descripcion": ""
+        },
+        {
+            "imagen": "",
+            "nombre": "Spirit Surge",
+            "descripcion": ""
+        },
+        {
+            "imagen": "",
+            "nombre": "Ultra Bash",
             "descripcion": ""
         },
         {
@@ -13,58 +37,7 @@
         },
         {
             "imagen": "",
-            "nombre": "Spirit Surge",
-            "descripcion": ""
-        },
-        {
-            "imagen": "",
-            "nombre": "Empty",
-            "descripcion": ""
-        },
-        {
-            "imagen": "",
-            "nombre": "Empty",
-            "descripcion": ""
-        },
-        {
-            "imagen": "",
-            "nombre": "Empty",
-            "descripcion": ""
-        },
-        {
-            "imagen": "",
-            "nombre": "Empty",
-            "descripcion": ""
-        },
-        {
-            "imagen": "",
-            "nombre": "Light Harvest",
-            "descripcion": ""
-        },
-        {
-            "imagen": "",
-            "nombre": "Magnet",
-            "descripcion": ""
-        },
-        {
-            "imagen": "",
-            "nombre": "Lifeforce",
-            "descripcion": ""
-        },
-        {
-            "imagen": "",
-            "nombre": "Bounty",
-            "descripcion": ""
-        },
-        {
-            "imagen": "",
-            "nombre": "Deflector",
-            "descripcion": ""
-        },
-        {
-            "imagen": "",
-            "nombre": "Spirit Surge",
-            "nombre": "Empty",
+            "nombre": "Sticky",
             "descripcion": ""
         }
     ]

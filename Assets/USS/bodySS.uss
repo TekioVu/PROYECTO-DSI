@@ -59,3 +59,26 @@
     border-left-width: 0;
     -unity-text-outline-width: 1px;
 }
+
+ .toggle-custom * {
+    background-color: transparent;
+    border-width: 0;
+    background-image: url("project://database/Assets/Resources/toggleBG.png");
+    width: 40px;
+    height: 30px;
+     justify-content: center;
+    align-items: center;
+}
+
+.toggle-custom .unity-toggle__checkmark {
+    background-image: url("project://database/Assets/Resources/tizaX.png");
+    -unity-background-image-tint-color: white;
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+}
+
+.toggle-custom:checked .unity-toggle__checkmark {
+    opacity: 1;
+}

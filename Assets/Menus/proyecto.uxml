@@ -1,20 +1,19 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <Style src="project://database/Assets/bodySS.uss?fileID=7433441132597879392&amp;guid=af7353dc526a13c409ebd57c26236ba8&amp;type=3#bodySS"/>
+    <Style src="project://database/Assets/USS/bodySS.uss?fileID=7433441132597879392&amp;guid=af7353dc526a13c409ebd57c26236ba8&amp;type=3#bodySS"/>
     <ui:VisualElement name="Juego" style="flex-grow: 1;">
-        <ui:VisualElement name="InitMenu" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/Backgrounds/MainMenuBG.png?fileID=2800000&amp;guid=bd33c7d0b8815d0448551599b7a29450&amp;type=3#MainMenuBG&quot;); display: flex;">
+        <ui:VisualElement name="InitMenu" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/Backgrounds/MainMenuBG.png?fileID=2800000&amp;guid=bd33c7d0b8815d0448551599b7a29450&amp;type=3#MainMenuBG&quot;); display: none;">
             <ui:VisualElement name="Title" style="flex-grow: 1; position: absolute; background-image: url(&quot;project://database/Assets/Images/Backgrounds/Ori_and_the_Will_of_the_Wisps_logo.png?fileID=2800000&amp;guid=019fd49276d47c14597a0bc649552e6f&amp;type=3#Ori_and_the_Will_of_the_Wisps_logo&quot;); width: 40%; height: 40%; top: 20%; left: 31%; right: 50%;"/>
             <ui:Label text="START" name="Init" class="text" style="font-size: 20px; top: 60%; left: 41%; width: 141px; -unity-text-align: middle-center; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); -unity-font-style: bold;"/>
             <ui:Label text="OPTIONS" name="Options" class="text" style="font-size: 20px; top: 70%; left: 41%; width: 141px; -unity-text-align: middle-center; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); -unity-font-style: bold;"/>
         </ui:VisualElement>
         <ui:VisualElement name="MainMenu" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/Backgrounds/MainMenuBG.png?fileID=2800000&amp;guid=bd33c7d0b8815d0448551599b7a29450&amp;type=3#MainMenuBG&quot;); display: none;">
             <ui:VisualElement name="Title" style="flex-grow: 1; position: absolute; background-image: url(&quot;project://database/Assets/Images/Backgrounds/Ori_and_the_Will_of_the_Wisps_logo.png?fileID=2800000&amp;guid=019fd49276d47c14597a0bc649552e6f&amp;type=3#Ori_and_the_Will_of_the_Wisps_logo&quot;); width: 40%; height: 40%; top: 10%; left: 30%; right: 50%;"/>
-            <ui:Label text="ABILITY TREE" name="abilityTree" emoji-fallback-support="true" class="text" style="font-size: 20px; top: 45%; left: 35%; width: 190px; -unity-text-align: upper-center; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); -unity-font-style: bold;"/>
-            <ui:Label text="ORI&apos;S MENU" name="orisMenu" class="text" style="font-size: 20px; top: 55%; left: 41%; width: 100px; -unity-text-align: upper-center; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); -unity-font-style: bold; height: 31px;"/>
-            <ui:Label text="SHOP" name="shop" class="text" style="font-size: 20px; top: 65%; left: 40%; width: 121px; -unity-text-align: upper-center; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); -unity-font-style: bold;"/>
-            <ui:Label text="SELECT WEAPON" name="weaponSelection" class="text" style="font-size: 20px; top: 75%; left: 35%; width: 200px; -unity-text-align: upper-center; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); -unity-font-style: bold;"/>
-            <ui:Label text="EXIT" name="Exit" selectable="false" focusable="false" class="text" style="font-size: 20px; top: 85%; left: 41%; width: 100px; -unity-text-align: upper-center; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); -unity-font-style: bold;"/>
+            <ui:Label text="ORI&apos;S MENU" name="orisMenu" class="text" style="font-size: 20px; top: 50%; left: 41%; width: 100px; -unity-text-align: upper-center; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); -unity-font-style: bold; height: 31px;"/>
+            <ui:Label text="SHOP" name="shop" class="text" style="font-size: 20px; top: 60%; left: 40%; width: 121px; -unity-text-align: upper-center; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); -unity-font-style: bold;"/>
+            <ui:Label text="SELECT WEAPON" name="weaponSelection" class="text" style="font-size: 20px; top: 70%; left: 35%; width: 200px; -unity-text-align: upper-center; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); -unity-font-style: bold;"/>
+            <ui:Label text="EXIT" name="Exit" selectable="false" focusable="false" class="text" style="font-size: 20px; top: 80%; left: 41%; width: 100px; -unity-text-align: upper-center; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); -unity-font-style: bold;"/>
         </ui:VisualElement>
-        <ui:VisualElement name="OptionsMenu" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/Backgrounds/MainMenuBG.png?fileID=2800000&amp;guid=bd33c7d0b8815d0448551599b7a29450&amp;type=3#MainMenuBG&quot;); display: none; background-color: rgba(0, 0, 0, 0.59); flex-direction: row; -unity-background-image-tint-color: rgb(255, 255, 255);">
+        <ui:VisualElement name="OptionsMenu" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/Backgrounds/MainMenuBG.png?fileID=2800000&amp;guid=bd33c7d0b8815d0448551599b7a29450&amp;type=3#MainMenuBG&quot;); display: flex; background-color: rgba(0, 0, 0, 0.59); flex-direction: row; -unity-background-image-tint-color: rgb(255, 255, 255);">
             <ui:VisualElement name="OptionsBG" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.67); flex-direction: row;">
                 <ui:VisualElement name="options" style="flex-grow: 1; width: 30%; margin-top: 50px; margin-left: 50px;">
                     <ui:Label text="SETTINGS" name="settings" class="text" style="-unity-text-align: upper-center; top: 0;"/>
@@ -41,13 +40,13 @@
                             <ui:Label text="Brightness" name="brightnessText" class="normalText" style="width: 30%; font-size: 20px;"/>
                             <ui:Slider label="" value="42" high-value="100" name="brightnessSlider" style="width: 324px; flex-direction: column; align-items: flex-start; justify-content: flex-end; align-self: center; position: absolute; top: 27px; left: 174px;"/>
                         </ui:VisualElement>
-                        <ui:VisualElement name="damageValues" style="flex-grow: 1; align-items: center; justify-content: center; flex-direction: row;">
+                        <ui:VisualElement name="damageValues" style="flex-grow: 1; align-items: center; justify-content: flex-start; flex-direction: row;">
                             <ui:Label text="Damage values" name="damageValuesText" class="normalText" style="width: 30%; font-size: 20px;"/>
-                            <ui:Toggle label="" name="damageValueToggle" style="width: 70%;"/>
+                            <ui:Toggle label="" name="damageValueToggle" style="width: 40px; height: 40px; align-items: center;"/>
                         </ui:VisualElement>
-                        <ui:VisualElement name="ShowMapTrail" style="flex-grow: 1; flex-direction: row; align-items: center; justify-content: center;">
+                        <ui:VisualElement name="ShowMapTrail" style="flex-grow: 1; flex-direction: row; align-items: center; justify-content: flex-start;">
                             <ui:Label text="Show map trail" name="ShowMapTrailText" class="normalText" style="width: 30%; font-size: 20px;"/>
-                            <ui:Toggle label="" name="ShowMapTrailToggle" style="width: 70%;"/>
+                            <ui:Toggle label="" name="ShowMapTrailToggle" style="width: 40px; height: 40px; align-items: center; justify-content: space-around; align-self: center;"/>
                         </ui:VisualElement>
                     </ui:VisualElement>
                     <ui:VisualElement name="controlsContent" style="flex-grow: 1; display: none; align-items: stretch; justify-content: center;">
@@ -90,7 +89,7 @@
                     <ui:Image name="mapImage" source="project://database/Assets/Images/mapaCompleto.jpg?fileID=2800000&amp;guid=4f5c4a6f92bf44d4da72f508670b699f&amp;type=3#mapaCompleto" scale-mode="StretchToFill" style="display: flex;"/>
                 </ui:VisualElement>
                 <ui:Label text="Map" name="mapText" class="normalText" style="font-size: 60px; -unity-text-align: middle-center; position: absolute; top: 10px; left: 356px; overflow: visible; visibility: visible;"/>
-                <ui:Label text="" name="missionDescription" class="text2" style="top: 77px; left: 263px; width: 269px; -unity-text-align: middle-center;"/>
+                <ui:Label text="" name="missionDescription" emoji-fallback-support="false" class="text2" style="top: 77px; left: 263px; width: 269px; -unity-text-align: middle-center; color: rgb(206, 179, 98);"/>
                 <ui:VisualElement name="missions" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); position: absolute; height: 177px; width: 167px; top: 86px; left: 8px;">
                     <ui:Label text="Cleanse the Waters" name="mission1" class="text" style="font-size: 15px; position: relative; -unity-text-align: upper-center;"/>
                     <ui:Label text="Rekindle the Forlorn Ruins" name="mission2" class="text" style="font-size: 15px; position: relative; -unity-text-align: upper-center;"/>
