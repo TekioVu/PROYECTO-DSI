@@ -60,18 +60,18 @@
     -unity-text-outline-width: 1px;
 }
 
- .toggle-custom * {
+.toggle-custom * {
     background-color: transparent;
     border-width: 0;
-    background-image: url("project://database/Assets/Resources/toggleBG.png");
+    background-image: url("project://database/Assets/Resources/toggleBG.png?fileID=2800000&guid=5ae2fd49e74847648a4e8694a571b1b2&type=3#toggleBG");
     width: 40px;
     height: 30px;
-     justify-content: center;
+    justify-content: center;
     align-items: center;
 }
 
 .toggle-custom .unity-toggle__checkmark {
-    background-image: url("project://database/Assets/Resources/tizaX.png");
+    background-image: url("project://database/Assets/Resources/tizaX.png?fileID=2800000&guid=cbcf56fe25d1858438a28000428d24d4&type=3#tizaX");
     -unity-background-image-tint-color: white;
     background-color: transparent;
     width: 30px;
@@ -81,4 +81,7 @@
 
 .toggle-custom:checked .unity-toggle__checkmark {
     opacity: 1;
+}
+
+.shard-button {
 }

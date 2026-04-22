@@ -102,8 +102,37 @@
             <ui:VisualElement name="Inventory" style="flex-grow: 1; display: none; background-color: rgb(0, 0, 0);">
                 <ui:Label text="Inventory" name="mapText" class="normalText" style="font-size: 60px; -unity-text-align: middle-center; position: absolute; top: 10px; left: 356px; overflow: visible; visibility: visible;"/>
             </ui:VisualElement>
-            <ui:VisualElement name="SpiritShards" style="flex-grow: 1; display: none; background-color: rgb(0, 0, 0);">
-                <ui:Label text="Spirit shards" name="mapText" selectable="true" focusable="true" class="normalText" style="font-size: 60px; -unity-text-align: middle-center; position: absolute; top: 10px; left: 356px; overflow: visible; visibility: visible;"/>
+            <ui:VisualElement name="SpiritShards" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/Backgrounds/cd3db37f-f138-4c80-af52-3895c7e756e5.png?fileID=2800000&amp;guid=b94b34206ce60da49af8f941e99ee44d&amp;type=3#cd3db37f-f138-4c80-af52-3895c7e756e5&quot;); flex-shrink: 1;">
+                <ui:Label text="SPIRIT SHARDS" name="Title" style="-unity-text-align: middle-center; color: rgb(255, 255, 255); -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); font-size: 30px; margin-top: 9px; flex-grow: 1; flex-shrink: 1;"/>
+                <ui:VisualElement name="Selected" style="flex-grow: 1; margin-left: 100px; margin-right: 100px; max-height: 60px; flex-direction: row; justify-content: center;"/>
+                <ui:VisualElement name="Body" style="flex-grow: 1; height: auto; flex-direction: row; min-height: 103px; max-height: none; margin-top: 2%;">
+                    <ui:VisualElement name="Options" style="flex-grow: 1; width: auto; margin-left: 24%; margin-top: 4%; min-width: auto; margin-right: 34px;">
+                        <ui:VisualElement name="Row1" style="flex-grow: 1; flex-direction: row; margin-left: -22px; margin-right: 22px; visibility: visible; display: flex;"/>
+                        <ui:VisualElement name="Row2" style="flex-grow: 1; flex-direction: row; display: flex;"/>
+                        <ui:VisualElement name="Row3" style="flex-grow: 1; flex-direction: row; margin-left: -22px; margin-right: 22px; display: flex;"/>
+                        <ui:VisualElement name="Row4" style="flex-grow: 1; flex-direction: row; display: flex;"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="Info" style="flex-grow: 1; justify-content: center; align-self: stretch; align-items: center; align-content: center; max-height: none; margin-top: 32px; margin-left: 11px; margin-right: 5%;">
+                        <ui:VisualElement name="SkillImage" style="flex-grow: 1; aspect-ratio: 1; justify-content: center; align-items: center; align-self: center; max-height: none; margin-right: 0%; overflow: visible;"/>
+                        <ui:VisualElement name="Background" style="flex-grow: 1; background-image: resource(&quot;Icons/SkillBackground&quot;); aspect-ratio: 1; justify-content: center; align-items: center; align-self: center; max-height: none; margin-right: 0%; background-size: 133% 133%; display: none; overflow: visible;"/>
+                        <ui:Label text="Empty" name="SkillName" style="-unity-text-align: middle-center; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); color: rgb(255, 255, 255); font-size: 16px;"/>
+                        <ui:Label text="Select a spirit shard" name="SkillInfo" style="-unity-text-align: middle-center; font-size: 12px; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); color: rgb(255, 255, 255); flex-wrap: wrap; max-width: none; white-space: normal; width: 180px;"/>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="Bottom" style="flex-grow: 1; max-height: none; display: flex; flex-direction: row; margin-left: 220px; margin-right: 220px; margin-bottom: 0; margin-top: 12px; justify-content: center; align-self: center; align-items: flex-end;">
+                    <ui:VisualElement name="Button1" style="flex-grow: 1; flex-direction: row; align-items: center; max-width: 100px;">
+                        <ui:VisualElement name="Img" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/Bindings/Arrows.png?fileID=2800000&amp;guid=afaec1fdd16ec7a4e8cedf680453b6b8&amp;type=3#Arrows&quot;); margin-bottom: 0; align-items: center; justify-content: center; aspect-ratio: 1.5; min-width: 16px;"/>
+                        <ui:Label text="Navigate" name="Text" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); color: rgb(255, 255, 255);"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="Button2" style="flex-grow: 1; flex-direction: row; margin-bottom: 0; align-items: center; max-width: 100px;">
+                        <ui:VisualElement name="Img" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/Bindings/Space.png?fileID=2800000&amp;guid=e8122a0f3b8f31c4aa6d40fbc30f7846&amp;type=3#Space&quot;); margin-bottom: 0; justify-content: center; aspect-ratio: 2; align-self: center; align-content: center; align-items: center; min-width: 14px; max-width: 54px;"/>
+                        <ui:Label text="Select" name="Text" style="color: rgb(255, 255, 255); -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;);"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="Button3" style="flex-grow: 1; flex-direction: row; margin-bottom: 0; max-width: 54px; align-items: center;">
+                        <ui:VisualElement name="Img" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/Bindings/Esc.png?fileID=2800000&amp;guid=d68e8edf8e3e24b4981ba6f983bdb015&amp;type=3#Esc&quot;); aspect-ratio: 1; justify-content: center;"/>
+                        <ui:Label text="Back" name="Text" style="color: rgb(255, 255, 255); -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;);"/>
+                    </ui:VisualElement>
+                </ui:VisualElement>
             </ui:VisualElement>
             <ui:Label text="&gt;" name="rightArrow" class="text" style="font-size: 60px; position: absolute; top: 0; left: 735px;"/>
             <ui:Label text="&lt;" name="leftArrow" class="text" style="font-size: 60px; position: absolute; top: 0; left: 22px;"/>

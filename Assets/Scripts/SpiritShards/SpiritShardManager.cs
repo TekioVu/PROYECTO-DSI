@@ -24,10 +24,11 @@ namespace SpiritShardNamespace
         private void OnEnable()
         {
             VisualElement root = GetComponent<UIDocument>().rootVisualElement;
+            VisualElement menu = root.Q<VisualElement>("SpiritShards");
 
-            optionsContainer = root.Q<VisualElement>("Options");
-            displayContainer = root.Q<VisualElement>("Info");
-            selectedContainer = root.Q<VisualElement>("Selected");
+            optionsContainer = menu.Q<VisualElement>("Options");
+            displayContainer = menu.Q<VisualElement>("Info");
+            selectedContainer = menu.Q<VisualElement>("Selected");
 
             currentImage = displayContainer.Q<VisualElement>("SkillImage");
             currentName = displayContainer.Q<Label>("SkillName");

@@ -2,12 +2,7 @@
     "icons": [
         {
             "imagen": "",
-            "nombre": "Overcharge",
-            "descripcion": ""
-        },
-        {
-            "imagen": "",
-            "nombre": "Life Harvest",
+            "nombre": "Life Pact",
             "descripcion": ""
         },
         {
@@ -17,17 +12,22 @@
         },
         {
             "imagen": "",
-            "nombre": "Last Stand",
+            "nombre": "Fracture",
             "descripcion": ""
         },
         {
             "imagen": "",
-            "nombre": "Spirit Surge",
+            "nombre": "Ultra Grapple",
             "descripcion": ""
         },
         {
             "imagen": "",
-            "nombre": "Ultra Bash",
+            "nombre": "Triple Jump",
+            "descripcion": ""
+        },
+        {
+            "imagen": "",
+            "nombre": "Resilience",
             "descripcion": ""
         },
         {
