@@ -9,19 +9,24 @@ namespace SpiritShardNamespace
     {
         VisualElement displayContainer;
         List<VisualElement> rows;
-        List<IconElement> options;
+        List<InventoryIcon> options;
 
-        int iconsPerRow = 8;
-        int currentIndex = 0;
+        int[] rowCapacities = new int[] { 8, 7, 6 };
+
+        //Vetnana de info 
+        private VisualTreeAsset infoTemplate;
+        private VisualElement currentInfoWindow;
+        private VisualElement root;
 
         private void OnEnable()
         {
-            VisualElement root = GetComponent<UIDocument>().rootVisualElement;
-            VisualElement menu = root.Q<VisualElement>("SpiritShards");
+            root = GetComponent<UIDocument>().rootVisualElement;
+            infoTemplate = Resources.Load<VisualTreeAsset>("Templates/InfoWindow");
+            VisualElement menu = root.Q<VisualElement>("Inventory");
 
             displayContainer = menu.Q<VisualElement>("Elements");
 
-            options = new List<IconElement>();
+            options = new List<InventoryIcon>();
 
             rows = new List<VisualElement>
             {
@@ -32,40 +37,51 @@ namespace SpiritShardNamespace
 
             List<Icon> listaIconos = InventoryDatabase.getData();
 
+            int index = 0;
+
             foreach (Icon icon in listaIconos)
             {
-                CrearIcono(icon);
+                AddIconToLayout(icon, ref index);
+            }
+
+            Sprite sprite = Resources.Load<Sprite>("Icons/Ori1/AbilityTree/Combat/ChargeFlame");
+
+            while (index < 21)
+            {
+                Icon emptyIcon = new Icon(sprite, "Empty", "Select a spirit shard");
+                AddIconToLayout(emptyIcon, ref index);
             }
         }
-
-        void CrearIcono(Icon icon)
+        void AddIconToLayout(Icon icon, ref int index)
         {
-            int rowIndex = currentIndex / iconsPerRow;
+            int rowIndex = 0;
+            int count = index;
 
-            if (rowIndex >= rows.Count)
+            // calcular fila correcta
+            while (count >= rowCapacities[rowIndex])
             {
-                Debug.LogWarning("No hay más espacio en las filas");
-                return;
+                count -= rowCapacities[rowIndex];
+                rowIndex++;
             }
 
             VisualElement row = rows[rowIndex];
 
-            IconElement elemento = new IconElement(icon);
+            InventoryIcon elemento = new InventoryIcon(icon);
 
             elemento.OnClicked += OnIconClicked;
             elemento.OnHovered += OnIconHovered;
+            elemento.OnExit += OnIconExit;
 
             options.Add(elemento);
             row.Add(elemento);
 
-            currentIndex++;
+            index++;
         }
-
         void GuardarDatos()
         {
             List<IconData> dataToSave = new List<IconData>();
 
-            foreach (IconElement elem in options)
+            foreach (InventoryIcon elem in options)
             {
                 if (elem.Data != null)
                 {
@@ -78,22 +94,56 @@ namespace SpiritShardNamespace
 
             string json = JsonHelperIcon.ToJson(dataToSave, true);
 
-            string ruta = Application.dataPath + "/JSON/SpiritShardsSelected.json";
+            string ruta = Application.dataPath + "/JSON/Inventory.json";
 
             System.IO.File.WriteAllText(ruta, json);
 
             //Debug.Log("Guardado correcto");
         }
 
-        void OnIconHovered(Icon icon)
+        void OnIconHovered(InventoryIcon inventoryIcon, Icon icon)
+        {
+            ShowInfoWindow(inventoryIcon, icon);
+        }
+
+        void OnIconExit()
+        {
+            HideInfoWindow();
+        }
+
+
+       void OnIconClicked(InventoryIcon ie, Icon icon)
         {
             
         }
 
-       void OnIconClicked(IconElement ie, Icon icon, bool selected)
+        private void ShowInfoWindow(InventoryIcon icon, Icon data)
         {
-            
+            if (currentInfoWindow != null)
+                root.Remove(currentInfoWindow);
 
+            currentInfoWindow = infoTemplate.Instantiate();
+
+            currentInfoWindow.Q<Label>("Title").text = data.Name;
+            currentInfoWindow.Q<Label>("Desc").text = data.Info;
+
+            // Posición
+            Vector2 pos = icon.worldBound.position;
+
+            currentInfoWindow.style.position = Position.Absolute;
+            currentInfoWindow.style.left = pos.x + icon.layout.width + - 375;
+            currentInfoWindow.style.top = pos.y - 20;
+
+            root.Add(currentInfoWindow);
+        }
+
+        private void HideInfoWindow()
+        {
+            if (currentInfoWindow != null)
+            {
+                root.Remove(currentInfoWindow);
+                currentInfoWindow = null;
+            }
         }
 
     }

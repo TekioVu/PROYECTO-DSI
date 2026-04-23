@@ -1,44 +1,89 @@
 {
-    "icons": [
-        {
-            "imagen": "",
-            "nombre": "Life Pact",
-            "descripcion": ""
-        },
-        {
-            "imagen": "",
-            "nombre": "Spirit Surge",
-            "descripcion": ""
-        },
-        {
-            "imagen": "",
-            "nombre": "Thorn",
-            "descripcion": ""
-        },
-        {
-            "imagen": "",
-            "nombre": "Energy",
-            "descripcion": ""
-        },
-        {
-            "imagen": "",
-            "nombre": "Triple Jump",
-            "descripcion": ""
-        },
-        {
-            "imagen": "",
-            "nombre": "Ultra Bash",
-            "descripcion": ""
-        },
-        {
-            "imagen": "",
-            "nombre": "Quickshot",
-            "descripcion": ""
-        },
-        {
-            "imagen": "",
-            "nombre": "Sticky",
-            "descripcion": ""
-        }
-    ]
+  "icons": [
+    {
+      "imagen": "Icons/Inventory/Acorn",
+      "nombre": "Nature's Blessing",
+      "descripcion": "Occasionally restore a small amount of health after dealing damage"
+    },
+    {
+      "imagen": "Icons/Inventory/Bag",
+      "nombre": "Scavenger",
+      "descripcion": "Increases the chance of finding additional loot from enemies"
+    },
+    {
+      "imagen": "Icons/Inventory/Bone",
+      "nombre": "Necrotic Edge",
+      "descripcion": "Attacks have a chance to steal a small amount of life from enemies"
+    },
+    {
+      "imagen": "Icons/Inventory/Ceramic",
+      "nombre": "Shatter",
+      "descripcion": "Projectiles break on impact, dealing small splash damage"
+    },
+    {
+      "imagen": "Icons/Inventory/Crystal",
+      "nombre": "Prismatic Force",
+      "descripcion": "Projectiles gain increased damage and can pierce through enemies"
+    },
+    {
+      "imagen": "Icons/Inventory/Feather",
+      "nombre": "Evasion",
+      "descripcion": "Increases movement speed and dodge chance slightly"
+    },
+    {
+      "imagen": "Icons/Inventory/Gold",
+      "nombre": "Greed",
+      "descripcion": "Enemies drop more currency when defeated"
+    },
+    {
+      "imagen": "Icons/Inventory/Key",
+      "nombre": "Opportunity",
+      "descripcion": "Increases critical hit chance and improves chest rewards"
+    },
+    {
+      "imagen": "Icons/Inventory/Light",
+      "nombre": "Quickshot",
+      "descripcion": "Spirit Arc fires 25% faster"
+    },
+    {
+      "imagen": "Icons/Inventory/Map",
+      "nombre": "Arcing",
+      "descripcion": "Spirit Arc shots also hit nearby enemies"
+    },
+    {
+      "imagen": "Icons/Inventory/PlantsBag",
+      "nombre": "Vitality",
+      "descripcion": "Gain (1/2/3) additional Life cell(s)"
+    },
+    {
+      "imagen": "Icons/Inventory/Statue",
+      "nombre": "Stoneform",
+      "descripcion": "Reduces incoming damage and increases resistance to effects"
+    },
+    {
+      "imagen": "Icons/Inventory/Stick",
+      "nombre": "Splitter",
+      "descripcion": "Spirit Arc shots split into (3/4/5) short-range shots, dealing 50% damage each"
+    },
+    {
+      "imagen": "Icons/Inventory/Stone",
+      "nombre": "Heavy Impact",
+      "descripcion": "Attacks deal increased knockback and slightly higher damage"
+    },
+    {
+      "imagen": "Icons/Inventory/Table",
+      "nombre": "Energy",
+      "descripcion": "Gain (1/2/3) additional Energy cell(s)"
+    },
+    {
+      "imagen": "Icons/Inventory/Water",
+      "nombre": "Life Harvest",
+      "descripcion": "Enemies drop more Life orbs"
+    },
+    {
+      "imagen": "Icons/Inventory/Yarn",
+      "nombre": "Tangle",
+      "descripcion": "Attacks have a chance to slow enemies briefly"
+    }
+  ]
 }

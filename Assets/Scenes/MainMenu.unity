@@ -399,7 +399,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1089387987}
   - component: {fileID: 1089387986}
-  - component: {fileID: 1089387985}
+  - component: {fileID: 1089387988}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -407,18 +407,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1089387985
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1089387984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57fc85503e4a5e749a82cb6dba1709c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpiritShardNamespace.SpiritShardManager
 --- !u!114 &1089387986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -457,6 +445,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1089387988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089387984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8de7a1d6b85e6504d8f30d57dec38c2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpiritShardNamespace.InventoryManager
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
