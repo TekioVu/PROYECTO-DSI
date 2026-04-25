@@ -1,4 +1,19 @@
-
-
 .shard-button {
+}
+
+.weapon {
+    position: absolute;
+    top: -63%;
+    left: 46%;
+    right: 46%;
+    bottom: 127%;
+    aspect-ratio: 1;
+    max-width: none;
+    background-image: resource("Icons/SkillBackground");
+    flex-grow: 1;
+    flex-shrink: 1;
+    justify-content: center;
+    align-self: center;
+    width: 8%;
+    height: 38%;
 }

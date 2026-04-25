@@ -19,16 +19,12 @@
         </ui:VisualElement>
         <ui:VisualElement name="Bottom" style="flex-grow: 1; max-height: none; display: flex; flex-direction: row; margin-left: 220px; margin-right: 220px; margin-bottom: 0; margin-top: 12px; justify-content: center; align-self: center; align-items: flex-end;">
             <ui:VisualElement name="Button1" style="flex-grow: 1; flex-direction: row; align-items: center; max-width: 100px;">
-                <ui:VisualElement name="Img" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/Bindings/Arrows.png?fileID=2800000&amp;guid=afaec1fdd16ec7a4e8cedf680453b6b8&amp;type=3#Arrows&quot;); margin-bottom: 0; align-items: center; justify-content: center; aspect-ratio: 1.5; min-width: 16px;"/>
+                <ui:VisualElement name="Img" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/Bindings/Navigate.png?fileID=2800000&amp;guid=d4a4b1af41630434cae58b0bc37603ed&amp;type=3#Navigate&quot;); margin-bottom: 0; align-items: center; justify-content: center; aspect-ratio: 1; min-width: 16px;"/>
                 <ui:Label text="Navigate" name="Text" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); color: rgb(255, 255, 255);"/>
             </ui:VisualElement>
             <ui:VisualElement name="Button2" style="flex-grow: 1; flex-direction: row; margin-bottom: 0; align-items: center; max-width: 100px;">
-                <ui:VisualElement name="Img" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/Bindings/Space.png?fileID=2800000&amp;guid=e8122a0f3b8f31c4aa6d40fbc30f7846&amp;type=3#Space&quot;); margin-bottom: 0; justify-content: center; aspect-ratio: 2; align-self: center; align-content: center; align-items: center; min-width: 14px; max-width: 54px;"/>
+                <ui:VisualElement name="Img" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/Bindings/RightClick.png?fileID=2800000&amp;guid=15fed39a8567ef548b7f403ca6f88cc3&amp;type=3#RightClick&quot;); margin-bottom: 0; justify-content: center; aspect-ratio: 1; align-self: center; align-content: center; align-items: center; min-width: 14px; max-width: 54px;"/>
                 <ui:Label text="Select" name="Text" style="color: rgb(255, 255, 255); -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;);"/>
-            </ui:VisualElement>
-            <ui:VisualElement name="Button3" style="flex-grow: 1; flex-direction: row; margin-bottom: 0; max-width: 54px; align-items: center;">
-                <ui:VisualElement name="Img" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/Bindings/Esc.png?fileID=2800000&amp;guid=d68e8edf8e3e24b4981ba6f983bdb015&amp;type=3#Esc&quot;); aspect-ratio: 1; justify-content: center;"/>
-                <ui:Label text="Back" name="Text" style="color: rgb(255, 255, 255); -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;);"/>
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

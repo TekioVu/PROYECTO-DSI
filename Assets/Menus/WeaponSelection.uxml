@@ -1,0 +1,36 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/USS/SpiritShards.uss?fileID=7433441132597879392&amp;guid=1858f890831715b468428e520410ae78&amp;type=3#SpiritShards"/>
+    <ui:VisualElement name="Weapon" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/Backgrounds/WeaponsBackground.jpg?fileID=2800000&amp;guid=e0c09969f1d3c634bbac2a1e03df0c92&amp;type=3#WeaponsBackground&quot;); flex-shrink: 1; background-color: rgba(0, 0, 0, 0.62); -unity-background-image-tint-color: rgb(221, 221, 221);">
+        <ui:Label text="WEAPON" name="Title" style="-unity-text-align: middle-center; color: rgb(255, 255, 255); -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); font-size: 30px; margin-top: 9px; flex-grow: 1; flex-shrink: 1; white-space: nowrap;"/>
+        <ui:VisualElement name="SelectedWeapon" style="flex-grow: 1; position: absolute; left: 43%; top: 25%; right: 43%; bottom: 26%;">
+            <ui:VisualElement name="SelectedImgBg" style="flex-grow: 1; background-image: resource(&quot;Icons/SkillBackground&quot;); width: 8%; height: 38%; aspect-ratio: 1; align-self: center;">
+                <ui:VisualElement name="SelectedImg" style="flex-grow: 1; background-image: none; width: 8%; height: 38%; aspect-ratio: 1; background-size: 60% 60%;"/>
+            </ui:VisualElement>
+            <ui:Label text="Select " name="SelectedName" style="color: rgb(255, 255, 255); font-size: 26px; -unity-text-align: upper-center; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;);"/>
+            <ui:Label text="Press Q to select a weapon" name="SelectedDesc" style="font-size: 18px; color: rgb(255, 255, 255); -unity-text-align: upper-center; white-space: nowrap; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;);"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="Body" style="flex-grow: 1; height: auto; flex-direction: row; min-height: 103px; max-height: none; margin-top: 2%; justify-content: center; align-self: stretch; visibility: hidden; display: flex;">
+            <ui:VisualElement name="Display" style="flex-grow: 1; position: absolute; top: 0%; left: 40%; right: 0%; bottom: 0%; width: 20%; height: 75%;">
+                <ui:Label text="" name="Name" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); color: rgb(255, 255, 255); font-size: 26%; -unity-font-style: normal; -unity-text-align: upper-center;"/>
+                <ui:Label text="" name="Desc" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); color: rgb(255, 255, 255); font-size: 20%; -unity-text-align: upper-center; white-space: normal;"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="Elements" style="flex-grow: 1; width: auto; min-width: auto; height: auto;"/>
+            <ui:VisualElement name="Arrow" style="flex-grow: 1; position: absolute; background-image: url(&quot;project://database/Assets/Images/Bindings/LightArrow.png?fileID=2800000&amp;guid=e28d85fecbf8f20458d3d7d6f90e8a4c&amp;type=3#LightArrow&quot;); aspect-ratio: 1; width: 14%; height: 31%; justify-content: center; align-self: center; background-position-y: center; -unity-slice-type: sliced; rotate: 0;"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="Bottom" style="flex-grow: 1; height: 0%; flex-direction: row; min-height: auto; max-height: none; margin-top: 0%; justify-content: center; align-items: flex-end;">
+            <ui:VisualElement name="Navigate" style="flex-grow: 1; flex-direction: row; align-items: center; max-width: 100px;">
+                <ui:VisualElement name="Img" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/Bindings/Navigate.png?fileID=2800000&amp;guid=d4a4b1af41630434cae58b0bc37603ed&amp;type=3#Navigate&quot;); margin-bottom: 0; align-items: center; justify-content: center; aspect-ratio: 1; min-width: 16px; background-size: 100% 100%;"/>
+                <ui:Label text="Navigate" name="Text" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); color: rgb(255, 255, 255);"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="Select" style="flex-grow: 1; flex-direction: row; align-items: center; max-width: 100px;">
+                <ui:VisualElement name="Img" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/Bindings/RightClick.png?fileID=2800000&amp;guid=15fed39a8567ef548b7f403ca6f88cc3&amp;type=3#RightClick&quot;); margin-bottom: 0; align-items: center; justify-content: center; aspect-ratio: 1; min-width: 16px; background-size: 100% 100%;"/>
+                <ui:Label text="Select" name="Text" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); color: rgb(255, 255, 255);"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="Weapons" style="flex-grow: 1; flex-direction: row; align-items: center; max-width: 100px;">
+                <ui:VisualElement name="Img" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/Bindings/Q.png?fileID=2800000&amp;guid=231f27094f4c87e419de4375151a7227&amp;type=3#Q&quot;); margin-bottom: 0; align-items: center; justify-content: center; aspect-ratio: 1; min-width: 16px; background-size: 100% 100%;"/>
+                <ui:Label text="Weapons" name="Text" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); color: rgb(255, 255, 255);"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:Image source="project://database/Assets/Images/Imagenes_Referencia/ArmasReference.png?fileID=2800000&amp;guid=36d7703f2a95bfd48aa2adcc4278cf38&amp;type=3#ArmasReference" enabled="true" name="Reference" style="overflow: visible; visibility: visible; display: none; position: absolute; height: 344px; width: 672px; top: 0; left: 0; opacity: 1;"/>
+</ui:UXML>

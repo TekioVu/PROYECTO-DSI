@@ -1,0 +1,64 @@
+{
+  "icons": [
+    {
+      "imagen": "Icons/Ori2/SpiritShards/Splinter",
+      "nombre": "Splinter",
+      "descripcion": "Spirit Arc shots split into (3/4/5) short-range shots, dealing 50% damage each"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/Quickshot",
+      "nombre": "Quickshot",
+      "descripcion": "Spirit Arc fires 25% faster"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/Arcing",
+      "nombre": "Arcing",
+      "descripcion": "Spirit Arc shots also hit nearby enemies"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/Vitality",
+      "nombre": "Vitality",
+      "descripcion": "Gain (1/2/3) additional Life cell(s)"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/Energy",
+      "nombre": "Energy",
+      "descripcion": "Gain (1/2/3) additional Energy cell(s)"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/LifeHarvest",
+      "nombre": "Life Harvest",
+      "descripcion": "Enemies drop more Life orbs"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/LightHarvest",
+      "nombre": "Light Harvest",
+      "descripcion": "Enemies drop (2/3/4) extra Spirit Light orbs"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/EnergyHarvest",
+      "nombre": "Energy Harvest",
+      "descripcion": "Enemies drop more Energy orbs"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/Lifeforce",
+      "nombre": "Lifeforce",
+      "descripcion": "(10/20/30)% bonus damage when above half life"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/LastStand",
+      "nombre": "Last Stand",
+      "descripcion": "Deal 20% more damage when below 15% Life"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/Reckless",
+      "nombre": "Reckless",
+      "descripcion": "Increase damage dealt and taken by (15/25/35)%"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/LifePact",
+      "nombre": "Life Pact",
+      "descripcion": "Spend Life to cast spells when out of Energy"
+    }
+  ]
+}
