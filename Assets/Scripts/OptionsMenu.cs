@@ -224,11 +224,20 @@ public class OptionsMenu : MonoBehaviour
             });
 
             deleteBtn.text = "X";
+            deleteBtn.AddToClassList("normalText");
+            deleteBtn.style.backgroundColor = new Color(0, 0, 0, 0.5f);
+            deleteBtn.style.width = 40;
+            deleteBtn.style.unityTextAlign = TextAnchor.MiddleCenter;
 
             List<Label> labels = new List<Label> { rank, name, time, progress, deaths };
 
             foreach (var l in labels)
+            {
+                l.AddToClassList("normalText");
+                l.style.width = 90;
+                l.style.unityTextAlign = TextAnchor.MiddleCenter;
                 row.Add(l);
+            }
 
             row.Add(deleteBtn);
             leaderboardContainer.Add(row);

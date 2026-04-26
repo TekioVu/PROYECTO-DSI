@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class MainMenu : MonoBehaviour
+public class MainMenuController : MonoBehaviour
 {
     VisualElement initMenu;
     VisualElement mainMenu;
@@ -19,12 +19,12 @@ public class MainMenu : MonoBehaviour
 
         var exitButton = root.Q<VisualElement>("Exit");
         var orisMenuButton = mainMenu.Q<VisualElement>("orisMenu");
-        var weaponsMenuButton = mainMenu.Q<VisualElement>("weaponSelection");
+        var weaponMenuButton = mainMenu.Q<VisualElement>("weaponSelection");
 
-        weaponsMenuButton.RegisterCallback<ClickEvent>(evt =>
+        weaponMenuButton.RegisterCallback<ClickEvent>(evt =>
         {
             mainMenu.style.display = DisplayStyle.None;
-            weaponMenu.style.display = DisplayStyle.Flex;
+            weaponMenuButton.style.display = DisplayStyle.Flex;
         });
 
         exitButton.RegisterCallback<ClickEvent>(evt =>

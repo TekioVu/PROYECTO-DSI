@@ -75,13 +75,35 @@ public class OrisMenu : MonoBehaviour
         });
 
         misionDescription = orisMenu.Q<Label>("missionDescription");
+        VisualElement m1 = orisMenu.Q<VisualElement>("mission1");
+        VisualElement m2 = orisMenu.Q<VisualElement>("mission2");
+        VisualElement m3 = orisMenu.Q<VisualElement>("mission3");
+        VisualElement m4 = orisMenu.Q<VisualElement>("mission4");
+        VisualElement m5 = orisMenu.Q<VisualElement>("mission5");
+        VisualElement m6 = orisMenu.Q<VisualElement>("mission6");
 
-        SetupMissionHover(orisMenu.Q("mission1"), "A spreading corruption...");
-        SetupMissionHover(orisMenu.Q("mission2"), "Ancient mechanisms...");
-        SetupMissionHover(orisMenu.Q("mission3"), "New paths...");
-        SetupMissionHover(orisMenu.Q("mission4"), "A fading source...");
-        SetupMissionHover(orisMenu.Q("mission5"), "Survival depends...");
-        SetupMissionHover(orisMenu.Q("mission6"), "A lost companion...");
+        SetupMissionHover(m1, "A spreading corruption must be purified before it consumes the remaining life of the forest.");
+        SetupMissionHover(m2, "Ancient mechanisms lie frozen and silent, waiting to be brought back to life.");
+        SetupMissionHover(m3, "New paths will open once the skies move again.");
+        SetupMissionHover(m4, "A fading source of light must be revived to protect everything that depends on it.");
+        SetupMissionHover(m5, "Survival depends on swift movement through collapsing and dangerous terrain.");
+        SetupMissionHover(m6, "A lost companion must be located somewhere in an unfamiliar land.");
+
+        MapResize();
+        MapItemsConfig();
+    }
+
+    void SetupMissionHover(VisualElement mission, string description)
+    {
+        mission.RegisterCallback<MouseEnterEvent>(_ => misionDescription.text = description);
+        mission.RegisterCallback<MouseLeaveEvent>(_ => misionDescription.text = " ");
+    }
+
+    void MapItemsConfig()
+    {
+        var root = GetComponent<UIDocument>().rootVisualElement;
+
+        VisualElement orisMenu = root.Q<VisualElement>("OrisMenu");
 
         Label displayItems = orisMenu.Q<Label>("displayMapItems");
         VisualElement mapItems = orisMenu.Q<VisualElement>("mapItems");
@@ -90,6 +112,7 @@ public class OrisMenu : MonoBehaviour
         mapItems.style.display = DisplayStyle.None;
         mapLegend.style.display = DisplayStyle.None;
 
+        displayItems.text = "Show items";
         displayItems.RegisterCallback<ClickEvent>(evt =>
         {
             if (mapItems.style.display == DisplayStyle.None)
@@ -105,11 +128,143 @@ public class OrisMenu : MonoBehaviour
                 displayItems.text = "Show items";
             }
         });
+
+        void SetBackgroundRecursive(VisualElement parent, Texture2D texture)
+        {
+            Debug.Log("HOVER");
+
+            foreach (var child in parent.Children())
+            {
+                if (texture == null)
+                    child.style.backgroundImage = StyleKeyword.None;
+                else
+                    child.style.backgroundImage = new StyleBackground(texture);
+            }
+        }
+        Label lifeCellsText = orisMenu.Q<Label>("lifeCellsLegendText");
+        VisualElement lifeCellsImages = orisMenu.Q<VisualElement>("lifeCells");
+
+        lifeCellsText.RegisterCallback<MouseEnterEvent>(evt =>
+        {
+            SetBackgroundRecursive(lifeCellsImages, circleTexture);
+        });
+
+        lifeCellsText.RegisterCallback<MouseLeaveEvent>(evt =>
+        {
+            SetBackgroundRecursive(lifeCellsImages, null);
+        });
+
+        Label energyCellsText = orisMenu.Q<Label>("energyCellsLegendText");
+        VisualElement energyCellsImages = orisMenu.Q<VisualElement>("energyCells");
+
+        energyCellsText.RegisterCallback<MouseEnterEvent>(evt =>
+        {
+            SetBackgroundRecursive(energyCellsImages, circleTexture);
+        });
+
+        energyCellsText.RegisterCallback<MouseLeaveEvent>(evt =>
+        {
+            SetBackgroundRecursive(energyCellsImages, null);
+        });
+
+        Label abilityText = orisMenu.Q<Label>("abilityPointsLegendText");
+        VisualElement abilityPointsImages = orisMenu.Q<VisualElement>("abilityPoints");
+
+        abilityText.RegisterCallback<MouseEnterEvent>(evt =>
+        {
+            SetBackgroundRecursive(abilityPointsImages, circleTexture);
+        });
+
+        abilityText.RegisterCallback<MouseLeaveEvent>(evt =>
+        {
+            SetBackgroundRecursive(abilityPointsImages, null);
+        });
+
+        Label oriText = orisMenu.Q<Label>("oriLegendText");
+        VisualElement oriImages = orisMenu.Q<VisualElement>("ori");
+
+        oriText.RegisterCallback<MouseEnterEvent>(evt =>
+        {
+            SetBackgroundRecursive(oriImages, circleTexture);
+        });
+
+        oriText.RegisterCallback<MouseLeaveEvent>(evt =>
+        {
+            SetBackgroundRecursive(oriImages, null);
+        });
     }
 
-    void SetupMissionHover(VisualElement mission, string description)
+    void MapResize()
     {
-        mission.RegisterCallback<MouseEnterEvent>(_ => misionDescription.text = description);
-        mission.RegisterCallback<MouseLeaveEvent>(_ => misionDescription.text = " ");
+        var root = GetComponent<UIDocument>().rootVisualElement;
+
+        VisualElement mapImage;
+        VisualElement container;
+
+        float zoom = 2.0f;
+        float minZoom = 1.0f;
+        float maxZoom = 5.0f;
+
+        Vector2 offset = Vector2.zero;
+        bool dragging = false;
+        Vector2 lastMousePos = Vector2.zero;
+
+        container = root.Q<VisualElement>("map");
+        mapImage = root.Q<VisualElement>("mapContent");
+
+        ApplyTransform();
+
+        container.RegisterCallback<WheelEvent>(evt =>
+        {
+            float zoomChange = -evt.delta.y * 0.01f;
+            zoom = Mathf.Clamp(zoom + zoomChange, minZoom, maxZoom);
+
+            ApplyTransform();
+        });
+
+        container.RegisterCallback<MouseDownEvent>(evt =>
+        {
+            dragging = true;
+            lastMousePos = evt.mousePosition;
+        });
+
+        container.RegisterCallback<MouseUpEvent>(evt =>
+        {
+            dragging = false;
+        });
+
+        container.RegisterCallback<MouseMoveEvent>(evt =>
+        {
+            if (!dragging) return;
+
+            Vector2 delta = evt.mousePosition - lastMousePos;
+            offset += delta;
+
+            lastMousePos = evt.mousePosition;
+
+            ClampOffset();
+            ApplyTransform();
+        });
+
+        void ClampOffset()
+        {
+            float containerWidth = container.resolvedStyle.width;
+            float containerHeight = container.resolvedStyle.height;
+
+            float imageWidth = mapImage.resolvedStyle.width * zoom;
+            float imageHeight = mapImage.resolvedStyle.height * zoom;
+
+            float maxX = (imageWidth - containerWidth) / 2f;
+            float maxY = (imageHeight - containerHeight) / 2f;
+
+            offset.x = Mathf.Clamp(offset.x, -maxX, maxX);
+            offset.y = Mathf.Clamp(offset.y, -maxY, maxY);
+        }
+
+        void ApplyTransform()
+        {
+            mapImage.transform.scale = new Vector3(zoom, zoom, 1);
+            mapImage.transform.position = offset;
+        }
     }
 }
