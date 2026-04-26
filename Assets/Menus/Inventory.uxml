@@ -1,18 +1,17 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/USS/SpiritShards.uss?fileID=7433441132597879392&amp;guid=1858f890831715b468428e520410ae78&amp;type=3#SpiritShards"/>
-    <ui:VisualElement name="Inventory" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/Backgrounds/InventoryBackground.png?fileID=2800000&amp;guid=2209fec4b2c3b774cb5529662de21784&amp;type=3#InventoryBackground&quot;); flex-shrink: 1;">
-        <ui:Label text="INVENTORY" name="Title" style="-unity-text-align: middle-center; color: rgb(255, 255, 255); -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); font-size: 30px; margin-top: 9px; flex-grow: 1; flex-shrink: 1;"/>
-        <ui:VisualElement name="Body" style="flex-grow: 1; height: auto; flex-direction: row; min-height: 103px; max-height: none; margin-top: 2%;">
-            <ui:VisualElement name="Elements" style="flex-grow: 1; width: auto; min-width: auto;">
-                <ui:VisualElement name="Row1" style="flex-grow: 1; flex-direction: row; visibility: visible; display: flex; justify-content: center;"/>
-                <ui:VisualElement name="Row2" style="flex-grow: 1; flex-direction: row; display: flex; justify-content: center;"/>
-                <ui:VisualElement name="Row3" style="flex-grow: 1; flex-direction: row; display: flex; justify-content: center;"/>
+    <ui:VisualElement name="Inventory" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/Backgrounds/InventoryBackground.png?fileID=2800000&amp;guid=2209fec4b2c3b774cb5529662de21784&amp;type=3#InventoryBackground&quot;); flex-shrink: 1; margin-top: 0%;">
+        <ui:Label text="INVENTORY" name="Title" style="-unity-text-align: upper-center; color: rgb(255, 255, 255); -unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); font-size: 30px; margin-top: 4%; flex-grow: 1; flex-shrink: 1; height: 5%; margin-bottom: 0;"/>
+        <ui:VisualElement name="Body" style="flex-grow: 1; height: auto; flex-direction: row; min-height: auto; max-height: none; margin-top: -24px;">
+            <ui:VisualElement name="Elements" style="flex-grow: 1; width: auto; min-width: auto; min-height: auto;">
+                <ui:VisualElement name="Row1" style="flex-grow: 1; flex-direction: row; visibility: visible; display: flex; justify-content: center; margin-top: 0%;"/>
+                <ui:VisualElement name="Row2" style="flex-grow: 1; flex-direction: row; display: flex; justify-content: center; margin-top: 0%;"/>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="Bottom" style="flex-grow: 1; height: auto; flex-direction: row; min-height: 103px; max-height: none; margin-top: 2%; justify-content: center; align-items: flex-end;">
+        <ui:VisualElement name="Bottom" style="flex-grow: 1; height: auto; flex-direction: row; min-height: 3%; max-height: none; margin-top: 2%; justify-content: center; align-items: flex-end;">
             <ui:VisualElement name="EnergyCell" style="flex-grow: 1; flex-direction: row; align-items: center; max-width: 100px;">
                 <ui:VisualElement name="Img" style="flex-grow: 1; background-image: resource(&quot;Icons/Ori2/OtherIcons/OriCircle&quot;); margin-bottom: 0; align-items: center; justify-content: center; aspect-ratio: 1; min-width: 16px; background-size: 60% 60%;"/>
-                <ui:Label text="5/20" name="Text" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); color: rgb(255, 255, 255);"/>
+                <ui:Label text="5/40" name="Text" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); color: rgb(255, 255, 255);"/>
             </ui:VisualElement>
             <ui:VisualElement name="LifeCell" style="flex-grow: 1; flex-direction: row; align-items: center; max-width: 100px;">
                 <ui:VisualElement name="Img" style="flex-grow: 1; background-image: resource(&quot;Icons/Ori2/OtherIcons/LifeCell&quot;); margin-bottom: 0; align-items: center; justify-content: center; aspect-ratio: 1; min-width: 16px;"/>
@@ -24,11 +23,21 @@
             </ui:VisualElement>
             <ui:VisualElement name="EnergyCell" style="flex-grow: 1; flex-direction: row; align-items: center; max-width: 100px;">
                 <ui:VisualElement name="Img" style="flex-grow: 1; background-image: resource(&quot;Icons/Ori2/OtherIcons/LifeShard&quot;); margin-bottom: 0; align-items: center; justify-content: center; aspect-ratio: 1; min-width: 16px;"/>
-                <ui:Label text="5/20" name="Text" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); color: rgb(255, 255, 255);"/>
+                <ui:Label text="3/16" name="Text" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); color: rgb(255, 255, 255);"/>
             </ui:VisualElement>
             <ui:VisualElement name="EnergyCell" style="flex-grow: 1; flex-direction: row; align-items: center; max-width: 100px;">
                 <ui:VisualElement name="Img" style="flex-grow: 1; background-image: resource(&quot;Icons/Ori2/OtherIcons/EnergyCell&quot;); margin-bottom: 0; align-items: center; justify-content: center; aspect-ratio: 1; min-width: 16px;"/>
                 <ui:Label text="5/20" name="Text" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); color: rgb(255, 255, 255);"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="Bottom2" style="flex-grow: 1; height: 0%; flex-direction: row; min-height: auto; max-height: none; margin-top: 0%; justify-content: center; align-items: flex-end;">
+            <ui:VisualElement name="Navigate" style="flex-grow: 1; flex-direction: row; align-items: center; max-width: 100px;">
+                <ui:VisualElement name="Img" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/Bindings/Navigate.png?fileID=2800000&amp;guid=d4a4b1af41630434cae58b0bc37603ed&amp;type=3#Navigate&quot;); margin-bottom: 0; align-items: center; justify-content: center; aspect-ratio: 1; min-width: 16px; background-size: 100% 100%;"/>
+                <ui:Label text="Navigate" name="Text" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); color: rgb(255, 255, 255);"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="Select" style="flex-grow: 1; flex-direction: row; align-items: center; max-width: 100px;">
+                <ui:VisualElement name="Img" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/Bindings/RightClick.png?fileID=2800000&amp;guid=15fed39a8567ef548b7f403ca6f88cc3&amp;type=3#RightClick&quot;); margin-bottom: 0; align-items: center; justify-content: center; aspect-ratio: 1; min-width: 16px; background-size: 100% 100%;"/>
+                <ui:Label text="Select" name="Text" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&amp;guid=e86290c5a134728479018e64543a6ebd&amp;type=3#Star Shine&quot;); color: rgb(255, 255, 255);"/>
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
