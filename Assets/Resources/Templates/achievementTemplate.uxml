@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Template name="LevelMeter" src="project://database/Assets/Menus/LevelMeter.uxml?fileID=9197481963319205126&amp;guid=8f83b4ddba6df2546be6164db562e70b&amp;type=3#LevelMeter"/>
+    <Style src="project://database/Assets/USS/bodySS.uss?fileID=7433441132597879392&amp;guid=af7353dc526a13c409ebd57c26236ba8&amp;type=3#bodySS"/>
+    <ui:VisualElement name="achievementCard" style="flex-grow: 1; justify-content: space-evenly; align-items: stretch;">
+        <ui:Instance template="LevelMeter" name="progress" style="height: 60%; align-items: stretch; justify-content: space-around; align-self: stretch;"/>
+        <ui:Label text="Description" name="description" class="normalText" style="-unity-text-align: middle-center;"/>
+        <ui:Label text="Press here to make Progress" name="progressButton" class="text" style="position: relative; -unity-text-align: middle-center;"/>
+    </ui:VisualElement>
+</ui:UXML>
