@@ -1,0 +1,89 @@
+{
+  "icons": [
+    {
+      "imagen": "Icons/Inventory/Acorn",
+      "nombre": "Acorn of Renewal",
+      "descripcion": "Occasionally restores a small amount of health after dealing damage"
+    },
+    {
+      "imagen": "Icons/Inventory/Bag",
+      "nombre": "Traveler's Bag",
+      "descripcion": "Increases the chance of finding additional loot from enemies"
+    },
+    {
+      "imagen": "Icons/Inventory/Bone",
+      "nombre": "Bone Leech",
+      "descripcion": "Attacks have a chance to steal a small amount of life from enemies"
+    },
+    {
+      "imagen": "Icons/Inventory/Ceramic",
+      "nombre": "Fragile Vessel",
+      "descripcion": "Projectiles shatter on impact, dealing small splash damage"
+    },
+    {
+      "imagen": "Icons/Inventory/Crystal",
+      "nombre": "Arcane Crystal",
+      "descripcion": "Projectiles gain increased damage and can pierce through enemies"
+    },
+    {
+      "imagen": "Icons/Inventory/Feather",
+      "nombre": "Swift Feather",
+      "descripcion": "Increases movement speed and dodge chance slightly"
+    },
+    {
+      "imagen": "Icons/Inventory/Gold",
+      "nombre": "Golden Greed",
+      "descripcion": "Enemies drop more currency when defeated"
+    },
+    {
+      "imagen": "Icons/Inventory/Key",
+      "nombre": "Lucky Key",
+      "descripcion": "Increases critical hit chance and improves chest rewards"
+    },
+    {
+      "imagen": "Icons/Inventory/Light",
+      "nombre": "Light Essence",
+      "descripcion": "Spirit Arc fires 25% faster"
+    },
+    {
+      "imagen": "Icons/Inventory/Map",
+      "nombre": "Guiding Map",
+      "descripcion": "Spirit Arc shots also hit nearby enemies"
+    },
+    {
+      "imagen": "Icons/Inventory/PlantsBag",
+      "nombre": "Herbal Satchel",
+      "descripcion": "Gain (1/2/3) additional Life cell(s)"
+    },
+    {
+      "imagen": "Icons/Inventory/Statue",
+      "nombre": "Stone Guardian",
+      "descripcion": "Reduces incoming damage and increases resistance to effects"
+    },
+    {
+      "imagen": "Icons/Inventory/Stick",
+      "nombre": "Splitting Branch",
+      "descripcion": "Spirit Arc shots split into (3/4/5) short-range shots, dealing 50% damage each"
+    },
+    {
+      "imagen": "Icons/Inventory/Stone",
+      "nombre": "Heavy Stone",
+      "descripcion": "Attacks deal increased knockback and slightly higher damage"
+    },
+    {
+      "imagen": "Icons/Inventory/Table",
+      "nombre": "Energy Relic",
+      "descripcion": "Gain (1/2/3) additional Energy cell(s)"
+    },
+    {
+      "imagen": "Icons/Inventory/Water",
+      "nombre": "Pure Water",
+      "descripcion": "Enemies drop more Life orbs"
+    },
+    {
+      "imagen": "Icons/Inventory/Yarn",
+      "nombre": "Enchanted Yarn",
+      "descripcion": "Attacks have a chance to slow enemies briefly"
+    }
+  ]
+}

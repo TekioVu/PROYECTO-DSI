@@ -13,7 +13,6 @@ namespace SpiritShardNamespace
 
         int[] rowCapacities = new int[] { 8, 7, 6 };
 
-        //Vetnana de info 
         private VisualTreeAsset infoTemplate;
         private VisualElement currentInfoWindow;
         private VisualElement root;
@@ -48,16 +47,16 @@ namespace SpiritShardNamespace
 
             while (index < 21)
             {
-                Icon emptyIcon = new Icon(sprite, "Empty", "Select a spirit shard");
+                Icon emptyIcon = new Icon(sprite, "Empty", "Empty");
                 AddIconToLayout(emptyIcon, ref index);
             }
         }
+
         void AddIconToLayout(Icon icon, ref int index)
         {
             int rowIndex = 0;
             int count = index;
 
-            // calcular fila correcta
             while (count >= rowCapacities[rowIndex])
             {
                 count -= rowCapacities[rowIndex];
@@ -72,11 +71,40 @@ namespace SpiritShardNamespace
             elemento.OnHovered += OnIconHovered;
             elemento.OnExit += OnIconExit;
 
+            InventoryDragManipulator dragger = new InventoryDragManipulator(elemento);
+            dragger.OnDrop += HandleDrop;
+            elemento.AddManipulator(dragger);
+
             options.Add(elemento);
             row.Add(elemento);
 
             index++;
         }
+
+        void HandleDrop(InventoryIcon source, Vector2 position)
+        {
+            foreach (var target in options)
+            {
+                if (target == source) continue;
+
+                if (target.worldBound.Contains(position))
+                {
+                    SwapIcons(source, target);
+                    return;
+                }
+            }
+        }
+
+        void SwapIcons(InventoryIcon a, InventoryIcon b)
+        {
+            Icon temp = a.Data;
+
+            a.SetIcon(b.Data);
+            b.SetIcon(temp);
+
+            GuardarDatos();
+        }
+
         void GuardarDatos()
         {
             List<IconData> dataToSave = new List<IconData>();
@@ -97,8 +125,6 @@ namespace SpiritShardNamespace
             string ruta = Application.dataPath + "/JSON/Inventory.json";
 
             System.IO.File.WriteAllText(ruta, json);
-
-            //Debug.Log("Guardado correcto");
         }
 
         void OnIconHovered(InventoryIcon inventoryIcon, Icon icon)
@@ -111,10 +137,8 @@ namespace SpiritShardNamespace
             HideInfoWindow();
         }
 
-
-       void OnIconClicked(InventoryIcon ie, Icon icon)
+        void OnIconClicked(InventoryIcon ie, Icon icon)
         {
-            
         }
 
         private void ShowInfoWindow(InventoryIcon icon, Icon data)
@@ -127,11 +151,10 @@ namespace SpiritShardNamespace
             currentInfoWindow.Q<Label>("Title").text = data.Name;
             currentInfoWindow.Q<Label>("Desc").text = data.Info;
 
-            // Posición
             Vector2 pos = icon.worldBound.position;
 
             currentInfoWindow.style.position = Position.Absolute;
-            currentInfoWindow.style.left = pos.x + icon.layout.width + - 375;
+            currentInfoWindow.style.left = pos.x + icon.layout.width - 375;
             currentInfoWindow.style.top = pos.y - 20;
 
             root.Add(currentInfoWindow);
@@ -145,6 +168,5 @@ namespace SpiritShardNamespace
                 currentInfoWindow = null;
             }
         }
-
     }
 }

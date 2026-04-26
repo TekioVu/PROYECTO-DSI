@@ -68,6 +68,10 @@ namespace SpiritShardNamespace
             data = icon;
             icono.style.backgroundImage = icon.Image != null ? new StyleBackground(icon.Image) : null;
         }
+        public Sprite GetSprite()
+        {
+            return Data?.Image;
+        }
 
         public void SetEmpty()
         {
