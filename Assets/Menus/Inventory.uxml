@@ -6,6 +6,7 @@
             <ui:VisualElement name="Elements" style="flex-grow: 1; width: auto; min-width: auto; min-height: auto;">
                 <ui:VisualElement name="Row1" style="flex-grow: 1; flex-direction: row; visibility: visible; display: flex; justify-content: center; margin-top: 0%;"/>
                 <ui:VisualElement name="Row2" style="flex-grow: 1; flex-direction: row; display: flex; justify-content: center; margin-top: 0%;"/>
+                <ui:VisualElement name="Row3" style="flex-grow: 1; flex-direction: row; display: flex; justify-content: center; margin-top: 0%;"/>
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="Bottom" style="flex-grow: 1; height: auto; flex-direction: row; min-height: 3%; max-height: none; margin-top: 2%; justify-content: center; align-items: flex-end;">
