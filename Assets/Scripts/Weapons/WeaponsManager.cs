@@ -62,7 +62,7 @@ namespace SpiritShardNamespace
 
        void AddIconToLayout(Icon icon)
         {
-            float radius = 180f;
+            float radius = 150f;
             int count = 12;
 
             float angleStep = 360f / count;
@@ -76,7 +76,7 @@ namespace SpiritShardNamespace
             elemento.AddToClassList("weapon");
 
             elemento.style.left = Length.Percent(47);
-            elemento.style.top = Length.Percent(12);
+            elemento.style.top = Length.Percent(30);
             elemento.style.translate = new Translate(x, y);
 
             options.Add(elemento);
@@ -131,7 +131,7 @@ namespace SpiritShardNamespace
 
        void UpdateArrow()
         {
-            float radius = 120f;
+            float radius = 90f;
             int count = 12;
 
             float angleStep = 360f / count;
@@ -144,7 +144,7 @@ namespace SpiritShardNamespace
             float y = Mathf.Sin(angle) * radius;
 
             displayArrow.style.left = Length.Percent(43);
-            displayArrow.style.top = Length.Percent(10);
+            displayArrow.style.top = Length.Percent(28);
             displayArrow.style.translate = new Translate(x, y);
 
             displayArrow.style.rotate = new Rotate(new Angle(angleDeg - 90f, AngleUnit.Degree));
