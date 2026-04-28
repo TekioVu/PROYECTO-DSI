@@ -24,7 +24,7 @@ public class MainMenuController : MonoBehaviour
         weaponMenuButton.RegisterCallback<ClickEvent>(evt =>
         {
             mainMenu.style.display = DisplayStyle.None;
-            weaponMenuButton.style.display = DisplayStyle.Flex;
+            weaponMenu.style.display = DisplayStyle.Flex;
         });
 
         exitButton.RegisterCallback<ClickEvent>(evt =>
