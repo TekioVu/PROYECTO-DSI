@@ -180,73 +180,126 @@ public class OptionsMenu : MonoBehaviour
             controlText.text = "Keyboard";
         });
 
-        VisualElement achievementsContent = root.Q<VisualElement>("achievmentsContent");
-        VisualTreeAsset achievementTemplate = Resources.Load<VisualTreeAsset>("Templates/achievementTemplate");
-
-        VisualElement instance = achievementTemplate.Instantiate();
-        achievementsContent.Add(instance);
-
-        Label progressButton = root.Q<Label>("progressButton");
-        RadialProgress radial = instance.Query<RadialProgress>().First();
-
-        if (progressButton != null && radial != null)
-        {
-            progressButton.RegisterCallback<ClickEvent>(evt =>
-            {
-                radial.Progress = Mathf.Clamp(radial.Progress + 20f, 0f, 100f);
-            });
-        }
+        Achievments();
     }
 
-    void RefreshLeaderboard()
+    void Achievments()
     {
-        leaderboardContainer.Clear();
+        var root = GetComponent<UIDocument>().rootVisualElement;
 
-        for (int i = 0; i < leaderboard.Count; i++)
+        var oldContainer = root.Q<VisualElement>("achievmentsContent");
+        ScrollView scroll = new ScrollView(ScrollViewMode.Vertical);
+        scroll.style.flexGrow = 1;
+        scroll.AddToClassList("my-scroll");
+
+        oldContainer.Clear();
+        oldContainer.Add(scroll);
+        VisualTreeAsset achievementTemplate =
+            Resources.Load<VisualTreeAsset>("Templates/achievementTemplate");
+
+        int columns = 3;
+        int rows = 5;
+
+        VisualElement grid = new VisualElement();
+        grid.style.flexDirection = FlexDirection.Column;
+
+        for (int r = 0; r < rows; r++)
         {
-            int index = i;
-            var entry = leaderboard[i];
-
             VisualElement row = new VisualElement();
             row.style.flexDirection = FlexDirection.Row;
-            row.AddToClassList("row");
 
-            Label rank = new Label((i + 1).ToString());
-            Label name = new Label(entry.nombre);
-            Label time = new Label(entry.tiempo.ToString("F2"));
-            Label progress = new Label(entry.progreso + "%");
-            Label deaths = new Label(entry.muertes.ToString());
-
-            Button deleteBtn = new Button(() =>
+            for (int c = 0; c < columns; c++)
             {
-                leaderboard.RemoveAt(index);
-                RefreshLeaderboard();
-            });
+                VisualElement card = achievementTemplate.Instantiate();
 
-            deleteBtn.text = "X";
-            deleteBtn.AddToClassList("normalText");
-            deleteBtn.style.backgroundColor = new Color(0, 0, 0, 0.5f);
-            deleteBtn.style.width = 40;
-            deleteBtn.style.unityTextAlign = TextAnchor.MiddleCenter;
-
-            List<Label> labels = new List<Label> { rank, name, time, progress, deaths };
-
-            foreach (var l in labels)
-            {
-                l.AddToClassList("normalText");
-                l.style.width = 90;
-                l.style.unityTextAlign = TextAnchor.MiddleCenter;
-                row.Add(l);
+                card.style.paddingRight = 20;
+                card.style.paddingBottom = 20;
+                card.style.paddingTop = 20;
+                card.style.paddingLeft = 20;
+                card.style.width = 300;
+                card.style.height = 200;
+                row.Add(card);
             }
 
-            row.Add(deleteBtn);
-            leaderboardContainer.Add(row);
+            grid.Add(row);
+
+
+        }
+
+        scroll.Add(grid);
+
+        foreach (var row in grid.Children())
+        {
+            foreach (var card in row.Children())
+            {
+                var progressButton = card.Q<Label>("progressButton");
+                var radial = card.Q<RadialProgress>();
+
+                if (radial != null)
+                    radial.Progress = 0;
+
+                if (progressButton != null && radial != null)
+                {
+                    progressButton.RegisterCallback<ClickEvent>(evt =>
+                    {
+                        radial.Progress = Mathf.Clamp(radial.Progress + 20f, 0f, 100f);
+                    });
+                }
+            }
         }
     }
 
-    void ShowError(string message)
-    {
-        errorLabel.text = message;
-        errorLabel.style.display = DisplayStyle.Flex;
+        void RefreshLeaderboard()
+        {
+            leaderboardContainer.Clear();
+
+            for (int i = 0; i < leaderboard.Count; i++)
+            {
+                int index = i;
+                var entry = leaderboard[i];
+
+                VisualElement row = new VisualElement();
+                row.style.flexDirection = FlexDirection.Row;
+                row.AddToClassList("row");
+
+                Label rank = new Label((i + 1).ToString());
+                Label name = new Label(entry.nombre);
+                Label time = new Label(entry.tiempo.ToString("F2"));
+                Label progress = new Label(entry.progreso + "%");
+                Label deaths = new Label(entry.muertes.ToString());
+
+                Button deleteBtn = new Button(() =>
+                {
+                    leaderboard.RemoveAt(index);
+                    RefreshLeaderboard();
+                });
+
+                deleteBtn.text = "X";
+                deleteBtn.AddToClassList("normalText");
+                deleteBtn.style.backgroundColor = new Color(0, 0, 0, 0.5f);
+                deleteBtn.style.width = 40;
+                deleteBtn.style.unityTextAlign = TextAnchor.MiddleCenter;
+
+                List<Label> labels = new List<Label> { rank, name, time, progress, deaths };
+
+                foreach (var l in labels)
+                {
+                    l.AddToClassList("normalText");
+                    l.style.width = 90;
+                    l.style.unityTextAlign = TextAnchor.MiddleCenter;
+                    row.Add(l);
+                }
+
+                row.Add(deleteBtn);
+                leaderboardContainer.Add(row);
+            }
+        
     }
+
+        void ShowError(string message)
+        {
+            errorLabel.text = message;
+            errorLabel.style.display = DisplayStyle.Flex;
+        }
+    
 }

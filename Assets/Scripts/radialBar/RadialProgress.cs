@@ -38,6 +38,8 @@ namespace UIToolkitDemo
 
         // This is the number that the Label displays as a percentage.
         float m_Progress;
+        float m_TargetProgress;
+        bool m_IsAnimating;
 
         [UxmlAttribute]
         public Color TrackColor
@@ -72,18 +74,13 @@ namespace UIToolkitDemo
         [UxmlAttribute][CreateProperty]
         public float Progress
         {
-            // Exposes the Progress property.
             get => m_Progress;
             set
             {
-                // Set the Progress value and update the label text
-                m_Progress = value;
-                m_Label.text = Mathf.Clamp(Mathf.Round(value), 0, 100) + "%";
-                
-                // Triggers the generateVisualContent callback and repaints the element.
-                // This is used to refresh the UI when the Progress changes.
-                // Useful for custom controls, especially when visual content needs updating.
-                MarkDirtyRepaint();
+                m_TargetProgress = Mathf.Clamp(value, 0, 100);
+
+                if (!m_IsAnimating)
+                    StartAnimation();
             }
         }
 
@@ -168,6 +165,26 @@ namespace UIToolkitDemo
             painter.Arc(new Vector2(width * 0.5f, height * 0.5f), width * 0.5f, -90.0f,
                 360.0f * (Progress / 100.0f) - 90.0f);
             painter.Stroke();
+        }
+        void StartAnimation()
+        {
+            m_IsAnimating = true;
+
+            schedule.Execute(() =>
+            {
+                float speed = 120f; // velocidad de animación (ajústala)
+
+                m_Progress = Mathf.MoveTowards(m_Progress, m_TargetProgress, speed * Time.deltaTime);
+
+                m_Label.text = Mathf.RoundToInt(m_Progress) + "%";
+                MarkDirtyRepaint();
+
+                if (Mathf.Approximately(m_Progress, m_TargetProgress))
+                {
+                    m_IsAnimating = false;
+                    return;
+                }
+            }).Every(16); // ~60fps
         }
     }
 }

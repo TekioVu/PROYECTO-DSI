@@ -88,3 +88,40 @@
     #MapContainer {
     overflow: hidden;
 }
+
+.my-scroll {
+    background-color: transparent;
+}
+
+.my-scroll .unity-scroller--vertical,
+.my-scroll .unity-base-slider,
+.my-scroll .unity-base-slider__tracker {
+    width: 30px;
+    min-width: 30px;
+    max-width: 30px;
+}
+
+.my-scroll .unity-scroller--vertical {
+    width: 30px;
+}
+
+.my-scroll .unity-scroller__low-button,
+.my-scroll .unity-scroller__high-button {
+    display: none;
+}
+
+.my-scroll .unity-base-slider__tracker {
+    background-color: transparent;
+    border-width: 0;
+    background-image: url("project://database/Assets/Resources/trackV.png");
+    -unity-background-scale-mode: stretch-to-fill;
+}
+
+.my-scroll .unity-base-slider__dragger {
+    background-color: transparent;
+    background-image: url("project://database/Assets/Resources/handle.png?fileID=21300000&guid=d9dcf3ff29f1e984389f319b5bbfac1f&type=3#handle");
+    width: 30px;
+    height: 30px;
+     -unity-background-scale-mode: scale-to-fit;
+
+}

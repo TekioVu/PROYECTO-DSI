@@ -1,6 +1,6 @@
 .xp-meter__background {
-    width: 270px;
-    height: 270px;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     background-color: rgba(190, 123, 8, 0);
@@ -11,8 +11,8 @@
 }
 
 .xp-meter__counter-group {
-    width: 270px;
-    height: 270px;
+    width: 100%;
+    height: 100%;
     background-color: rgb(255, 255, 255);
     justify-content: flex-end;
     position: absolute;
@@ -20,8 +20,8 @@
 
 .xp-meter__icon {
     position: absolute;
-    width: 150px;
-    height: 150px;
+    width: 100%;
+    height: 100%;
     background-color: rgba(52, 152, 219, 0.63);
 }
 
@@ -59,7 +59,8 @@
 
 .radial-progress {
     --track-color: rgb(0, 22, 26);
-    --progress-image: url("project://database/Assets/Resources/Icons/SkillBackground.png");
+            --progress-color: rgb(255, 255, 255);
+
 }
 
 .level-meter__background {
@@ -78,8 +79,8 @@
     background-color: rgba(52, 152, 219, 0);
     background-image: url("project://database/Assets/Resources/Achievements/Bring_it_On.png");
     -unity-background-scale-mode: scale-to-fit;
-    width: 202px;
-    height: 197px;
+    width: 100%;
+    height: 100%;
     top: -11px;
     left: 46px;
     border-top-left-radius: 15px;
