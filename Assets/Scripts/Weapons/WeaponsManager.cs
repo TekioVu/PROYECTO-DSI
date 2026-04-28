@@ -13,6 +13,8 @@ namespace SpiritShardNamespace
         int currentSelected = 0;
         List<WeaponIcon> options;
 
+        VisualElement initMenu;
+
         //Display
         VisualElement menu;
         VisualElement displayContainer;
@@ -26,10 +28,14 @@ namespace SpiritShardNamespace
         VisualElement selectedImage;
         Label selectedName;
         Label selectedDesc;
+
+        Label exit;
         private void OnEnable()
         {
             VisualElement root = GetComponent<UIDocument>().rootVisualElement;
             menu = root.Q<VisualElement>("Weapon");
+
+            initMenu = root.Q<VisualElement>("InitMenu");
 
             displayContainer = menu.Q<VisualElement>("Body");
             displayName = displayContainer.Q<Label>("Name");
@@ -41,6 +47,14 @@ namespace SpiritShardNamespace
             selectedImage = selectedWeapon.Q<VisualElement>("SelectedImg");
             selectedName = selectedWeapon.Q<Label>("SelectedName");
             selectedDesc = selectedWeapon.Q<Label>("SelectedDesc");
+            exit = menu.Q<Label>("exit");
+
+
+            exit.RegisterCallback<ClickEvent>(evt =>
+            {
+                menu.style.display = DisplayStyle.None;
+                initMenu.style.display = DisplayStyle.Flex;
+            });
 
             options = new List<WeaponIcon>();
 
