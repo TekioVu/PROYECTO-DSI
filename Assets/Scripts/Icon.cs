@@ -6,8 +6,6 @@ namespace SpiritShardNamespace
     [Serializable]
     public class Icon
     {
-        public event Action Cambio;
-
         [SerializeField] private Sprite image;
         public Sprite Image
         {
@@ -17,7 +15,6 @@ namespace SpiritShardNamespace
                 if(value != image)
                 {
                     image = value;
-                    Cambio?.Invoke();
                 }
             }
         }
@@ -30,7 +27,6 @@ namespace SpiritShardNamespace
                 if(value != name)
                 {
                     name = value;
-                    Cambio?.Invoke();
                 }
             }
         }
@@ -44,7 +40,32 @@ namespace SpiritShardNamespace
                 if(value != info)
                 {
                     info = value;
-                    Cambio?.Invoke();
+                }
+            }
+        }
+
+        [SerializeField] private int price;
+        public int Price
+        {
+            get{return price;}
+            set
+            {
+                if(value != price)
+                {
+                    price = value;
+                }
+            }
+        }
+
+        [SerializeField] private bool sold;
+        public bool Sold
+        {
+            get{return sold;}
+            set
+            {
+                if(value != sold)
+                {
+                    sold = value;
                 }
             }
         }
@@ -54,6 +75,17 @@ namespace SpiritShardNamespace
             this.image = image;
             this.name = name;
             this.info = info;
+            this.sold = false;
+            this.price = 0;
+        }
+
+        public Icon(Sprite image, string name, string info, int price)
+        {
+            this.image = image;
+            this.name = name;
+            this.info = info;
+            this.sold = false;
+            this.price = price;
         }
     }
 }

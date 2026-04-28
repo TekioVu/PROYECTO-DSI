@@ -2,7 +2,7 @@
     "icons": [
         {
             "imagen": "",
-            "nombre": "Reckless",
+            "nombre": "Overcharge",
             "descripcion": ""
         },
         {
@@ -12,17 +12,17 @@
         },
         {
             "imagen": "",
-            "nombre": "Spirit Surge",
-            "descripcion": ""
-        },
-        {
-            "imagen": "",
-            "nombre": "Empty",
-            "descripcion": ""
-        },
-        {
-            "imagen": "",
             "nombre": "Quickshot",
+            "descripcion": ""
+        },
+        {
+            "imagen": "",
+            "nombre": "Light Harvest",
+            "descripcion": ""
+        },
+        {
+            "imagen": "",
+            "nombre": "Ultra Grapple",
             "descripcion": ""
         },
         {

@@ -1,0 +1,159 @@
+{
+  "icons": [
+    {
+      "imagen": "Icons/Ori2/SpiritShards/Splinter",
+      "nombre": "Splinter",
+      "descripcion": "Spirit Arc shots split into (3/4/5) short-range shots, dealing 50% damage each"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/Quickshot",
+      "nombre": "Quickshot",
+      "descripcion": "Spirit Arc fires 25% faster"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/Arcing",
+      "nombre": "Arcing",
+      "descripcion": "Spirit Arc shots also hit nearby enemies"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/Vitality",
+      "nombre": "Vitality",
+      "descripcion": "Gain (1/2/3) additional Life cell(s)"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/Energy",
+      "nombre": "Energy",
+      "descripcion": "Gain (1/2/3) additional Energy cell(s)"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/LifeHarvest",
+      "nombre": "Life Harvest",
+      "descripcion": "Enemies drop more Life orbs"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/LightHarvest",
+      "nombre": "Light Harvest",
+      "descripcion": "Enemies drop (2/3/4) extra Spirit Light orbs"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/EnergyHarvest",
+      "nombre": "Energy Harvest",
+      "descripcion": "Enemies drop more Energy orbs"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/Lifeforce",
+      "nombre": "Lifeforce",
+      "descripcion": "(10/20/30)% bonus damage when above half life"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/LastStand",
+      "nombre": "Last Stand",
+      "descripcion": "Deal 20% more damage when below 15% Life"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/Reckless",
+      "nombre": "Reckless",
+      "descripcion": "Increase damage dealt and taken by (15/25/35)%"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/LifePact",
+      "nombre": "Life Pact",
+      "descripcion": "Spend Life to cast spells when out of Energy"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/Overcharge",
+      "nombre": "Overcharge",
+      "descripcion": "Reduce Energy costs by 50% and increase damage taken by 100%"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/Swap",
+      "nombre": "Swap",
+      "descripcion": "Swap maximum Life and Energy"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/Magnet",
+      "nombre": "Magnet",
+      "descripcion": "Orbs float to Ori from further away"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/Overflow",
+      "nombre": "Overflow",
+      "descripcion": "Convert excess Energy to Life and excess Life to Energy"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/Finesse",
+      "nombre": "Finesse",
+      "descripcion": "(10/20)% chance to deal 50% bonus damage"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/SpiritSurge",
+      "nombre": "Spirit Surge",
+      "descripcion": "Spirit Light grants bonus damage. Caps at (3000/6000) Spirit Light"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/Thorn",
+      "nombre": "Thorn",
+      "descripcion": "Deal (25/50)% of melee damage taken back to enemies"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/Resilience",
+      "nombre": "Resilience",
+      "descripcion": "Take (10/20/25/30)% less damage"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/Deflector",
+      "nombre": "Deflector",
+      "descripcion": "Melee attacks deflect projectiles"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/Turmoil",
+      "nombre": "Turmoil",
+      "descripcion": "Enemies respawn faster"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/Bounty",
+      "nombre": "Bounty",
+      "descripcion": "Enemies have 70% more Life and deal 70% more damage, but drop double Spirit Light"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/Catalyst",
+      "nombre": "Catalyst",
+      "descripcion": "Replenish some Energy when dealing melee damage"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/Fracture",
+      "nombre": "Fracture",
+      "descripcion": "Detonate to split Light Burst into three smaller bursts"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/UltraBash",
+      "nombre": "Ultra Bash",
+      "descripcion": "Bash deals damage"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/Wingclip",
+      "nombre": "Wingclip",
+      "descripcion": "Deal bonus damage to flying enemies"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/UltraGrapple",
+      "nombre": "Ultra Grapple",
+      "descripcion": "Grapple (1/2) enemy per jump (and deal damage)"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/TripleJump",
+      "nombre": "Triple Jump",
+      "descripcion": "Jump twice midair before landing"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/Sticky",
+      "nombre": "Sticky",
+      "descripcion": "Stick and climb on walls"
+    },
+    {
+      "imagen": "Icons/Ori2/SpiritShards/Secret",
+      "nombre": "Secret",
+      "descripcion": "Secret walls become semi-transparent"
+    }
+  ]
+}

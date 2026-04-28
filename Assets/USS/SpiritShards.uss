@@ -17,3 +17,61 @@
     width: 8%;
     height: 38%;
 }
+
+.shopCard {
+    flex-grow: 1;
+    justify-content: center;
+    align-self: stretch;
+    align-items: center;
+    align-content: center;
+    max-height: none;
+    margin-top: 0;
+    margin-left: 2%;
+    margin-right: 2%;
+    background-color: rgb(5, 47, 96);
+    border-left-color: rgb(0, 22, 54);
+    border-right-color: rgb(0, 22, 54);
+    border-top-color: rgb(0, 22, 54);
+    border-bottom-color: rgb(0, 22, 54);
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    margin-bottom: 0;
+    width: auto;
+    height: 121%;
+    max-width: 19%;
+}
+
+.shopCard:hover {
+    flex-grow: 1;
+    justify-content: center;
+    align-self: stretch;
+    align-items: center;
+    align-content: center;
+    max-height: none;
+    margin-top: 0;
+    margin-left: 2%;
+    margin-right: 2%;
+    background-color: rgb(5, 47, 96);
+    border-left-color: rgb(251, 254, 255);
+    border-right-color: rgb(251, 254, 255);
+    border-top-color: rgb(251, 254, 255);
+    border-bottom-color: rgb(251, 254, 255);
+    border-top-width: 3px;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    border-left-width: 3px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    margin-bottom: 0;
+    width: auto;
+    height: 121%;
+    max-width: 19%;
+}
