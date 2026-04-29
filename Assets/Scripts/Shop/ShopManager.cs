@@ -36,6 +36,12 @@ namespace SpiritShardNamespace
         VisualElement leftArrow;
         VisualElement rightArrow;
         Label coinText;
+        VisualElement addCoins;
+
+
+        VisualElement initMenu;
+        Label exit;
+
         private void OnEnable()
         {
             VisualElement root = GetComponent<UIDocument>().rootVisualElement;
@@ -45,6 +51,10 @@ namespace SpiritShardNamespace
             leftArrow = menu.Q<VisualElement>("LeftArrow");
             rightArrow = menu.Q<VisualElement>("RightArrow");
             coinText = menu.Q<Label>("CoinText");
+            addCoins = menu.Q<VisualElement>("SpiritCellButton");
+
+            initMenu = root.Q<VisualElement>("InitMenu");
+            exit = menu.Q<Label>("exit");
 
             leftArrow.RegisterCallback<MouseDownEvent>(MoveLeft);
             rightArrow.RegisterCallback<MouseDownEvent>(MoveRight);
@@ -68,6 +78,16 @@ namespace SpiritShardNamespace
                     BuyItem(currentOptions[index].data);
                 });
             }
+
+            exit.RegisterCallback<ClickEvent>(evt =>
+            {
+                menu.style.display = DisplayStyle.None;
+                initMenu.style.display = DisplayStyle.Flex;
+            });
+
+            addCoins.RegisterCallback<ClickEvent>(evt =>{
+                OnAddCoins();
+            });
 
             UpdateDisplay();
         }
@@ -107,7 +127,15 @@ namespace SpiritShardNamespace
                 currentOptions[i].image.style.backgroundImage = new StyleBackground(currentOptions[i].data.Image);
                 currentOptions[i].name.text = currentOptions[i].data.Name; 
                 currentOptions[i].desc.text = currentOptions[i].data.Info; 
-                currentOptions[i].priceDisplay.text = currentOptions[i].data.Sold ? "SOLD" : currentOptions[i].data.Price.ToString();
+                currentOptions[i].priceDisplay.text = currentOptions[i].data.Sold ? "OWNED" : currentOptions[i].data.Price.ToString();
+
+                if(currentOptions[i].data.Sold){
+                    currentOptions[i].priceDisplay.style.color = Color.green;
+                }else if(currentCoins < currentOptions[i].data.Price){
+                    currentOptions[i].priceDisplay.style.color = Color.red;
+                }else{
+                    currentOptions[i].priceDisplay.style.color = Color.white;
+                }
             }
 
             coinText.text = currentCoins.ToString();
@@ -121,6 +149,13 @@ namespace SpiritShardNamespace
             icon.Sold = true;
             currentCoins -= icon.Price;
 
+            UpdateDisplay();
+        }
+
+        void OnAddCoins()
+        {
+            int coins = UnityEngine.Random.Range(5, 40) * 100;
+            currentCoins += coins;
             UpdateDisplay();
         }
     }

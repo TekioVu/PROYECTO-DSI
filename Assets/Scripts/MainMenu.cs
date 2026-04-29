@@ -6,6 +6,7 @@ public class MainMenuController : MonoBehaviour
     VisualElement initMenu;
     VisualElement mainMenu;
     VisualElement orisMenu;
+    VisualElement shopMenu;
     VisualElement weaponMenu;
 
     void OnEnable()
@@ -16,10 +17,12 @@ public class MainMenuController : MonoBehaviour
         mainMenu = root.Q<VisualElement>("MainMenu");
         orisMenu = root.Q<VisualElement>("OrisMenu");
         weaponMenu = root.Q<VisualElement>("Weapon");
+        shopMenu = root.Q<VisualElement>("Shop");
 
         var exitButton = root.Q<VisualElement>("Exit");
         var orisMenuButton = mainMenu.Q<VisualElement>("orisMenu");
         var weaponMenuButton = mainMenu.Q<VisualElement>("weaponSelection");
+        var shopMenuButton = mainMenu.Q<VisualElement>("shop");
 
         weaponMenuButton.RegisterCallback<ClickEvent>(evt =>
         {
@@ -37,6 +40,12 @@ public class MainMenuController : MonoBehaviour
         {
             mainMenu.style.display = DisplayStyle.None;
             orisMenu.style.display = DisplayStyle.Flex;
+        });
+
+        shopMenuButton.RegisterCallback<ClickEvent>(evt =>
+        {
+            mainMenu.style.display = DisplayStyle.None;
+            shopMenu.style.display = DisplayStyle.Flex;
         });
     }
 }

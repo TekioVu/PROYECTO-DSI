@@ -28,7 +28,7 @@
     margin-top: 0;
     margin-left: 2%;
     margin-right: 2%;
-    background-color: rgb(5, 47, 96);
+    background-color: rgba(5, 47, 96, 0.53);
     border-left-color: rgb(0, 22, 54);
     border-right-color: rgb(0, 22, 54);
     border-top-color: rgb(0, 22, 54);
@@ -74,4 +74,46 @@
     width: auto;
     height: 121%;
     max-width: 19%;
+}
+
+.addCoins {
+    flex-grow: 1;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    left: 87%;
+    top: 17%;
+    width: 10%;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    background-color: rgba(0, 0, 0, 0.56);
+    right: 0%;
+    height: 5%;
+}
+
+.addCoins:hover {
+    flex-grow: 1;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    left: 87%;
+    top: 17%;
+    width: 10%;
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    background-color: rgba(0, 0, 0, 0.56);
+    right: 0%;
+    height: 5%;
 }

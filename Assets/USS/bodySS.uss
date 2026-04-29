@@ -114,7 +114,7 @@
 .my-scroll .unity-base-slider__tracker {
     background-color: transparent;
     border-width: 0;
-    background-image: url("project://database/Assets/Resources/trackV.png");
+    background-image: url("project://database/Assets/Resources/trackV.png?fileID=2800000&guid=8d4ef2f20ccb8ec46baf2ca1428d35f4&type=3#trackV");
     -unity-background-scale-mode: stretch-to-fill;
 }
 
@@ -123,9 +123,9 @@
     background-image: url("project://database/Assets/Resources/handle.png?fileID=21300000&guid=d9dcf3ff29f1e984389f319b5bbfac1f&type=3#handle");
     width: 30px;
     height: 30px;
-     -unity-background-scale-mode: scale-to-fit;
-
+    -unity-background-scale-mode: scale-to-fit;
 }
+
 .weapon {
     position: absolute;
     top: -63%;
@@ -141,4 +141,104 @@
     align-self: center;
     width: 8%;
     height: 38%;
+}
+
+.shopCard {
+    flex-grow: 1;
+    justify-content: center;
+    align-self: stretch;
+    align-items: center;
+    align-content: center;
+    max-height: none;
+    margin-top: 0;
+    margin-left: 2%;
+    margin-right: 2%;
+    background-color: rgba(5, 47, 96, 0.53);
+    border-left-color: rgb(0, 22, 54);
+    border-right-color: rgb(0, 22, 54);
+    border-top-color: rgb(0, 22, 54);
+    border-bottom-color: rgb(0, 22, 54);
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    margin-bottom: 0;
+    width: auto;
+    height: 121%;
+    max-width: 19%;
+}
+
+.shopCard:hover {
+    flex-grow: 1;
+    justify-content: center;
+    align-self: stretch;
+    align-items: center;
+    align-content: center;
+    max-height: none;
+    margin-top: 0;
+    margin-left: 2%;
+    margin-right: 2%;
+    background-color: rgb(5, 47, 96);
+    border-left-color: rgb(251, 254, 255);
+    border-right-color: rgb(251, 254, 255);
+    border-top-color: rgb(251, 254, 255);
+    border-bottom-color: rgb(251, 254, 255);
+    border-top-width: 3px;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    border-left-width: 3px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    margin-bottom: 0;
+    width: auto;
+    height: 121%;
+    max-width: 19%;
+}
+
+.addCoins {
+    flex-grow: 1;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    left: 87%;
+    top: 17%;
+    width: 10%;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    background-color: rgba(0, 0, 0, 0.56);
+    right: 0%;
+    height: 5%;
+}
+
+.addCoins:hover {
+    flex-grow: 1;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    left: 87%;
+    top: 17%;
+    width: 10%;
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    background-color: rgba(0, 0, 0, 0.56);
+    right: 0%;
+    height: 5%;
 }
