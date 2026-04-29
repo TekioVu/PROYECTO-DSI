@@ -27,7 +27,7 @@
 }
 
 .color__background--white {
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(120, 210, 255, 1);
 }
 
 .color__background--orange {
@@ -38,7 +38,7 @@
 }
 
 .color__border--clear {
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(8, 12, 40, 0.56);
 }
 
 .color__border--white {

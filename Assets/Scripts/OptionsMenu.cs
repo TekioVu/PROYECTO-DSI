@@ -1,5 +1,7 @@
+﻿using System;
 using System.Collections.Generic;
 using UIToolkitDemo;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -10,6 +12,7 @@ public class OptionsMenu : MonoBehaviour
 
     VisualElement optionsMenu;
     VisualElement leaderboardContainer;
+    VisualElement achievementsContent;
     Label errorLabel;
 
     List<PlayerEntry> leaderboard = new List<PlayerEntry>();
@@ -40,9 +43,9 @@ public class OptionsMenu : MonoBehaviour
         optionsContent.Add(leaderboardsContent);
 
         VisualElement achievments = optionsMenu.Q<VisualElement>("achievments");
-        VisualElement achievmentsContent = optionsMenu.Q<VisualElement>("achievmentsContent");
+        achievementsContent = optionsMenu.Q<VisualElement>("achievmentsContent");
         options.Add(achievments);
-        optionsContent.Add(achievmentsContent);
+        optionsContent.Add(achievementsContent);
 
         VisualElement exit = optionsMenu.Q<VisualElement>("exitOptions");
         exit.RegisterCallback<ClickEvent>(evt =>
@@ -183,6 +186,7 @@ public class OptionsMenu : MonoBehaviour
         Achievments();
     }
 
+    private int achievementsCompleted = 0;
     void Achievments()
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
@@ -192,7 +196,7 @@ public class OptionsMenu : MonoBehaviour
         scroll.style.flexGrow = 1;
         scroll.AddToClassList("my-scroll");
 
-        oldContainer.Clear();
+        //oldContainer.Clear();
         oldContainer.Add(scroll);
         VisualTreeAsset achievementTemplate =
             Resources.Load<VisualTreeAsset>("Templates/achievementTemplate");
@@ -203,6 +207,41 @@ public class OptionsMenu : MonoBehaviour
         VisualElement grid = new VisualElement();
         grid.style.flexDirection = FlexDirection.Column;
 
+        string[] descriptions = {
+            "Bring it On\nMake 5\nairbone kills",
+            "Cartographer\nBuy all Maps\nfrom Lupo",
+            "Completionist\nComplete every\nSide Quest" ,
+            "Destiny\nComplete the Game" ,
+            "Guardian's Rest\nFend off Kwolok" ,
+            "Hardcore Fan\nComplete Hard Mode" ,
+            "Healthy\nMax out Life" ,
+            "High and Dry\nAvoid Touching any\nCorrupted Water" ,
+            "Home Sweet Home\nReach the Wellspring\nGlades" ,
+            " Immortal\nComplete the Game\nwithout Dying" ,
+            "Let the Waters Flow\nClear the Watermill" ,
+            "Look at the Time\nComplete the Game\nin Under 4 Hours" ,
+            "Powerful\nMax out Energy" ,
+            "Stone Cold\nDefeat Shriek" ,
+            "Untouchable\nDefeat Mora Without\nTaking any Damage" 
+        };
+        string[] images = {
+            "Bring_it_On",
+            "Cartographer3Fg3F",
+            "Completionist" ,
+            "Destiny" ,
+            "Guardian27s_Rest" ,
+            "Hardcore_Fan" ,
+            "Healthy" ,
+            "High_and_Dry" ,
+            "Home_Sweet_Home" ,
+            "Immortal" ,
+            "Let_the_Waters_Flow" ,
+            "Look_at_the_Time" ,
+            "Powerful" ,
+            "Stone_Cold" ,
+            "Untouchable"
+        };
+
         for (int r = 0; r < rows; r++)
         {
             VisualElement row = new VisualElement();
@@ -210,14 +249,34 @@ public class OptionsMenu : MonoBehaviour
 
             for (int c = 0; c < columns; c++)
             {
+                int index = r * columns + c;
+
                 VisualElement card = achievementTemplate.Instantiate();
 
-                card.style.paddingRight = 20;
-                card.style.paddingBottom = 20;
-                card.style.paddingTop = 20;
-                card.style.paddingLeft = 20;
-                card.style.width = 300;
+                card.style.paddingRight = 5;
+                card.style.paddingBottom = 5;
+                card.style.paddingTop = 5;
+                card.style.paddingLeft = 5;
+                card.style.width = 350;
                 card.style.height = 200;
+
+                var description = card.Q<Label>("description");
+                if (description != null && index < descriptions.Length)
+                {
+                    description.text = descriptions[index];
+                }
+
+                var radial = card.Q<VisualElement>("progress");
+                if (radial != null && index < images.Length)
+                {
+                    var avatar = radial.Q<VisualElement>("level-meter__avatar");
+                    if (avatar != null)
+                    {
+                        Texture2D tex = Resources.Load<Texture2D>("Achievements/" + images[index]);
+                        avatar.style.backgroundImage = new StyleBackground(tex);
+                    }
+                }
+
                 row.Add(card);
             }
 
@@ -228,6 +287,7 @@ public class OptionsMenu : MonoBehaviour
 
         scroll.Add(grid);
 
+        Texture2D completed = Resources.Load<Texture2D>("pngwing.com");
         foreach (var row in grid.Children())
         {
             foreach (var card in row.Children())
@@ -237,19 +297,48 @@ public class OptionsMenu : MonoBehaviour
 
                 if (radial != null)
                     radial.Progress = 0;
-
+                float progress = 0f;
                 if (progressButton != null && radial != null)
                 {
                     progressButton.RegisterCallback<ClickEvent>(evt =>
                     {
-                        radial.Progress = Mathf.Clamp(radial.Progress + 20f, 0f, 100f);
+                        progress = Mathf.Clamp(progress + 20f, 0f, 100f);
+
+                        radial.Progress = progress;
+
+                        UpdateAchievementState(radial, progressButton, card, completed, progress);
                     });
                 }
             }
         }
     }
+    void UpdateAchievementState(RadialProgress radial, Label progressButton, VisualElement card, Texture2D completed, float progress)
+    {
+        if (progress >= 100f)
+        {
+            achievementsCompleted++;
+            Label nAch = achievementsContent.Q<Label>("nAchievements");
+            nAch.text = achievementsCompleted + "/15";
 
-        void RefreshLeaderboard()
+            progressButton.RemoveFromClassList("text");
+            progressButton.AddToClassList("activeText");
+            progressButton.text = "Completed";
+            progressButton.style.backgroundImage = new StyleBackground(completed);
+
+            card.AddToClassList("cardCompleted");
+        }
+        else
+        {
+            progressButton.RemoveFromClassList("activeText");
+            progressButton.AddToClassList("text");
+            progressButton.text = "Press to make progress";
+            progressButton.style.backgroundImage = StyleKeyword.None;
+
+            card.RemoveFromClassList("cardCompleted");
+        }
+    }
+
+    void RefreshLeaderboard()
         {
             leaderboardContainer.Clear();
 

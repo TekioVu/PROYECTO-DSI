@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UIElements;
-
 public class OrisMenu : MonoBehaviour
 {
     [SerializeField] private Texture2D circleTexture;
@@ -198,53 +197,50 @@ public class OrisMenu : MonoBehaviour
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
 
-        VisualElement mapImage;
-        VisualElement container;
+        VisualElement container = root.Q<VisualElement>("map");
+        VisualElement mapImage = root.Q<VisualElement>("mapContent");
 
-        float zoom = 2.0f;
-        float minZoom = 1.0f;
-        float maxZoom = 5.0f;
+        float minZoom = 1f;
+        float maxZoom = 5f;
 
+        float zoom = 2f;
         Vector2 offset = Vector2.zero;
-        bool dragging = false;
-        Vector2 lastMousePos = Vector2.zero;
 
-        container = root.Q<VisualElement>("map");
-        mapImage = root.Q<VisualElement>("mapContent");
+        // Guardar estado inicial
+        float initialZoom = zoom;
+        Vector2 initialOffset = offset;
 
         ApplyTransform();
 
-        container.RegisterCallback<WheelEvent>(evt =>
+        mapImage.AddManipulator(new PanManipulator(() =>
         {
-            float zoomChange = -evt.delta.y * 0.01f;
-            zoom = Mathf.Clamp(zoom + zoomChange, minZoom, maxZoom);
+            return new PanData
+            {
+                offset = offset,
+                onMove = delta =>
+                {
+                    offset += delta;
+                    ClampOffset();
+                    ApplyTransform();
+                }
+            };
+        }));
 
-            ApplyTransform();
-        });
-
-        container.RegisterCallback<MouseDownEvent>(evt =>
+        mapImage.AddManipulator(new ZoomManipulator(() =>
         {
-            dragging = true;
-            lastMousePos = evt.mousePosition;
-        });
+            return new ZoomData
+            {
+                zoom = zoom,
+                onZoom = (delta, mousePos) =>
+                {
+                    float zoomChange = -delta.y * 0.01f;
+                    zoom = Mathf.Clamp(zoom + zoomChange, minZoom, maxZoom);
 
-        container.RegisterCallback<MouseUpEvent>(evt =>
-        {
-            dragging = false;
-        });
-
-        container.RegisterCallback<MouseMoveEvent>(evt =>
-        {
-            if (!dragging) return;
-
-            Vector2 delta = evt.mousePosition - lastMousePos;
-            offset += delta;
-
-            lastMousePos = evt.mousePosition;
-
-            ClampOffset();
-            ApplyTransform();
-        });
+                    ClampOffset();
+                    ApplyTransform();
+                }
+            };
+        }));
 
         void ClampOffset()
         {
@@ -254,8 +250,8 @@ public class OrisMenu : MonoBehaviour
             float imageWidth = mapImage.resolvedStyle.width * zoom;
             float imageHeight = mapImage.resolvedStyle.height * zoom;
 
-            float maxX = (imageWidth - containerWidth) / 2f;
-            float maxY = (imageHeight - containerHeight) / 2f;
+            float maxX = Mathf.Max(0, (imageWidth - containerWidth) / 2f);
+            float maxY = Mathf.Max(0, (imageHeight - containerHeight) / 2f);
 
             offset.x = Mathf.Clamp(offset.x, -maxX, maxX);
             offset.y = Mathf.Clamp(offset.y, -maxY, maxY);
@@ -266,5 +262,109 @@ public class OrisMenu : MonoBehaviour
             mapImage.transform.scale = new Vector3(zoom, zoom, 1);
             mapImage.transform.position = offset;
         }
+
+        container.RegisterCallback<AttachToPanelEvent>(_ =>
+        {
+            zoom = initialZoom;
+            offset = initialOffset;
+            ApplyTransform();
+        });
+    }
+}
+
+public struct PanData
+{
+    public Vector2 offset;
+    public System.Action<Vector2> onMove;
+}
+public class PanManipulator : PointerManipulator
+{
+ 
+
+    private bool active;
+    private Vector2 lastPos;
+
+    private System.Func<PanData> getData;
+
+    public PanManipulator(System.Func<PanData> data)
+    {
+        getData = data;
+        activators.Add(new ManipulatorActivationFilter { button = MouseButton.LeftMouse });
+    }
+
+    protected override void RegisterCallbacksOnTarget()
+    {
+        target.RegisterCallback<PointerDownEvent>(OnDown);
+        target.RegisterCallback<PointerMoveEvent>(OnMove);
+        target.RegisterCallback<PointerUpEvent>(OnUp);
+    }
+
+    protected override void UnregisterCallbacksFromTarget()
+    {
+        target.UnregisterCallback<PointerDownEvent>(OnDown);
+        target.UnregisterCallback<PointerMoveEvent>(OnMove);
+        target.UnregisterCallback<PointerUpEvent>(OnUp);
+    }
+
+    void OnDown(PointerDownEvent evt)
+    {
+        if (!CanStartManipulation(evt)) return;
+        active = true;
+        lastPos = evt.position;
+        target.CapturePointer(evt.pointerId);
+    }
+
+    void OnMove(PointerMoveEvent evt)
+    {
+        if (!active || !target.HasPointerCapture(evt.pointerId)) return;
+
+        var delta = (Vector2)evt.position - lastPos;
+        lastPos = evt.position;
+
+        var data = getData();
+        data.onMove(delta);
+    }
+
+    void OnUp(PointerUpEvent evt)
+    {
+        if (!active || !target.HasPointerCapture(evt.pointerId)) return;
+
+        active = false;
+        target.ReleasePointer(evt.pointerId);
+    }
+}
+
+public struct ZoomData
+{
+    public float zoom;
+    public System.Action<Vector2, Vector2> onZoom;
+}
+
+public class ZoomManipulator : PointerManipulator
+{
+    
+
+    private System.Func<ZoomData> getData;
+
+    public ZoomManipulator(System.Func<ZoomData> data)
+    {
+        getData = data;
+    }
+
+    protected override void RegisterCallbacksOnTarget()
+    {
+        target.RegisterCallback<WheelEvent>(OnWheel);
+    }
+
+    protected override void UnregisterCallbacksFromTarget()
+    {
+        target.UnregisterCallback<WheelEvent>(OnWheel);
+    }
+
+    void OnWheel(WheelEvent evt)
+    {
+        var data = getData();
+        data.onZoom(evt.delta, evt.mousePosition);
+        evt.StopPropagation();
     }
 }
