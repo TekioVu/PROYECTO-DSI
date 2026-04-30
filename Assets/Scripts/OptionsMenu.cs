@@ -253,12 +253,12 @@ public class OptionsMenu : MonoBehaviour
 
                 VisualElement card = achievementTemplate.Instantiate();
 
-                card.style.paddingRight = 5;
-                card.style.paddingBottom = 5;
-                card.style.paddingTop = 5;
-                card.style.paddingLeft = 5;
-                card.style.width = 350;
-                card.style.height = 200;
+                card.style.paddingRight = 8;
+                card.style.paddingBottom = 8;
+                card.style.paddingTop = 8;
+                card.style.paddingLeft = 8;
+                card.style.width = 250;
+                card.style.height = 280;
 
                 var description = card.Q<Label>("description");
                 if (description != null && index < descriptions.Length)
@@ -326,6 +326,8 @@ public class OptionsMenu : MonoBehaviour
             progressButton.style.backgroundImage = new StyleBackground(completed);
 
             card.AddToClassList("cardCompleted");
+
+            progressButton.SetEnabled(false);
         }
         else
         {

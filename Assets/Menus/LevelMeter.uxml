@@ -3,17 +3,13 @@
     <Style src="project://database/Assets/USS/Colors.uss?fileID=7433441132597879392&amp;guid=b3d65e613a640654dada285b30f24132&amp;type=3#Colors"/>
     <Style src="project://database/Assets/USS/Text.uss?fileID=7433441132597879392&amp;guid=3597a3f5cf405eb46954ad7c94fc95e9&amp;type=3#Text"/>
     <Style src="project://database/Assets/USS/Common.uss?fileID=7433441132597879392&amp;guid=e2e3bcb18373ca84895f5f9df68eb098&amp;type=3#Common"/>
-    <ui:VisualElement name="level-meter__container" picking-mode="Ignore" class="cursor-a level-meter__container text__font--default" style="margin-top: 0%; margin-right: 0%; margin-bottom: 0%; margin-left: 0%; justify-content: space-around; align-items: center; align-self: center;">
-        <UIToolkitDemo.AspectRatioElement width="1" height="1" name="square__container" picking-mode="Ignore" style="width: 110%; height: 100%; position: relative; left: -4%; top: auto; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
-            <ui:VisualElement name="level-meter__counter-group" class="xp-meter__counter-group cursor-a" style="background-color: rgba(44, 62, 80, 0); align-items: center; justify-content: center; top: -1%; left: 4%; -unity-background-scale-mode: scale-to-fit; position: relative; background-size: 100% 100%;">
+    <ui:VisualElement name="level-meter__container" picking-mode="Ignore" class="cursor-a level-meter__container text__font--default" style="margin-top: 0%; margin-right: 0%; margin-bottom: 0%; margin-left: 0%; justify-content: space-around; align-items: center; align-self: center; aspect-ratio: 1; width: 80%; height: 80%;">
+        <UIToolkitDemo.AspectRatioElement width="1" height="1" name="square__container" picking-mode="Ignore" style="width: 100%; height: 100%; position: relative; left: auto; top: auto; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
+            <ui:VisualElement name="level-meter__counter-group" class="xp-meter__counter-group cursor-a" style="background-color: rgba(44, 62, 80, 0); align-items: center; justify-content: center; top: 0%; left: 0%; -unity-background-scale-mode: scale-to-fit; position: relative; background-size: 100% 100%;">
                 <ui:VisualElement name="level-meter__background" picking-mode="Ignore" class="cursor-a level-meter__background" style="background-size: 100% 100%;"/>
-                <UIToolkitDemo.RadialProgress
-    track-color="rgb(10, 18, 40)"
-    progress-color="rgb(120, 170, 200)"
-    progress="19"
-    style="position: absolute; width: 86%; height: 81%;" />
+                <UIToolkitDemo.RadialProgress track-color="rgb(10, 18, 40)" progress-color="rgb(120, 170, 200)" progress="19" style="position: absolute; width: 86%; height: 81%;"/>
             </ui:VisualElement>
-            <ui:VisualElement name="level-meter__avatar" picking-mode="Ignore" class="xp-meter__icon level-meter__avatar" style="top: 13%; left: 17%; height: 73%; width: 75%; background-size: 100% 100%;"/>
+            <ui:VisualElement name="level-meter__avatar" picking-mode="Ignore" class="xp-meter__icon level-meter__avatar" style="top: 10%; left: 10%; height: 80%; width: 80%; background-size: 100% 100%; aspect-ratio: 1; flex-grow: 1; align-self: center; align-content: center;"/>
         </UIToolkitDemo.AspectRatioElement>
     </ui:VisualElement>
 </ui:UXML>

@@ -5,7 +5,7 @@
     position: absolute;
     -unity-font-definition: url("project://database/Assets/Fonts/Star%20Shine.otf?fileID=12800000&guid=e86290c5a134728479018e64543a6ebd&type=3#Star Shine");
     color: rgb(255, 255, 255);
-    font-size: 30px;
+    font-size: 150%;
 }
 
 .text:hover {

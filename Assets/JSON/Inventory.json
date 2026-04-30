@@ -12,12 +12,7 @@
         },
         {
             "imagen": "",
-            "nombre": "Stone Guardian",
-            "descripcion": ""
-        },
-        {
-            "imagen": "",
-            "nombre": "Acorn of Renewal",
+            "nombre": "Arcane Crystal",
             "descripcion": ""
         },
         {
@@ -27,7 +22,12 @@
         },
         {
             "imagen": "",
-            "nombre": "Fragile Vessel",
+            "nombre": "Acorn of Renewal",
+            "descripcion": ""
+        },
+        {
+            "imagen": "",
+            "nombre": "Enchanted Yarn",
             "descripcion": ""
         },
         {
@@ -52,12 +52,12 @@
         },
         {
             "imagen": "",
-            "nombre": "Arcane Crystal",
+            "nombre": "Stone Guardian",
             "descripcion": ""
         },
         {
             "imagen": "",
-            "nombre": "Enchanted Yarn",
+            "nombre": "Fragile Vessel",
             "descripcion": ""
         },
         {
