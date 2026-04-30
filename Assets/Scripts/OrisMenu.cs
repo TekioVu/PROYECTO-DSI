@@ -128,16 +128,17 @@ public class OrisMenu : MonoBehaviour
             }
         });
 
-        void SetBackgroundRecursive(VisualElement parent, Texture2D texture)
+        void SetBackgroundByClass(VisualElement root, string className, Texture2D texture)
         {
-            Debug.Log("HOVER");
 
-            foreach (var child in parent.Children())
+            var elements = root.Query<VisualElement>(className: className).ToList();
+
+            foreach (var elem in elements)
             {
                 if (texture == null)
-                    child.style.backgroundImage = StyleKeyword.None;
+                    elem.style.backgroundImage = StyleKeyword.None;
                 else
-                    child.style.backgroundImage = new StyleBackground(texture);
+                    elem.style.backgroundImage = new StyleBackground(texture);
             }
         }
         Label lifeCellsText = orisMenu.Q<Label>("lifeCellsLegendText");
@@ -145,12 +146,12 @@ public class OrisMenu : MonoBehaviour
 
         lifeCellsText.RegisterCallback<MouseEnterEvent>(evt =>
         {
-            SetBackgroundRecursive(lifeCellsImages, circleTexture);
+            SetBackgroundByClass(orisMenu, "lifeCells", circleTexture);
         });
 
         lifeCellsText.RegisterCallback<MouseLeaveEvent>(evt =>
         {
-            SetBackgroundRecursive(lifeCellsImages, null);
+        SetBackgroundByClass(orisMenu, "lifeCells", null);
         });
 
         Label energyCellsText = orisMenu.Q<Label>("energyCellsLegendText");
@@ -158,12 +159,12 @@ public class OrisMenu : MonoBehaviour
 
         energyCellsText.RegisterCallback<MouseEnterEvent>(evt =>
         {
-            SetBackgroundRecursive(energyCellsImages, circleTexture);
+            SetBackgroundByClass(orisMenu, "energyCells", circleTexture);
         });
 
         energyCellsText.RegisterCallback<MouseLeaveEvent>(evt =>
         {
-            SetBackgroundRecursive(energyCellsImages, null);
+            SetBackgroundByClass(orisMenu, "energyCells", null);
         });
 
         Label abilityText = orisMenu.Q<Label>("abilityPointsLegendText");
@@ -171,12 +172,12 @@ public class OrisMenu : MonoBehaviour
 
         abilityText.RegisterCallback<MouseEnterEvent>(evt =>
         {
-            SetBackgroundRecursive(abilityPointsImages, circleTexture);
+            SetBackgroundByClass(orisMenu, "abilityPoints", circleTexture);
         });
 
         abilityText.RegisterCallback<MouseLeaveEvent>(evt =>
         {
-            SetBackgroundRecursive(abilityPointsImages, null);
+            SetBackgroundByClass(orisMenu, "abilityPoints", null);
         });
 
         Label oriText = orisMenu.Q<Label>("oriLegendText");
@@ -184,12 +185,12 @@ public class OrisMenu : MonoBehaviour
 
         oriText.RegisterCallback<MouseEnterEvent>(evt =>
         {
-            SetBackgroundRecursive(oriImages, circleTexture);
+            SetBackgroundByClass(orisMenu, "ori", circleTexture);
         });
 
         oriText.RegisterCallback<MouseLeaveEvent>(evt =>
         {
-            SetBackgroundRecursive(oriImages, null);
+            SetBackgroundByClass(orisMenu, "ori", null);
         });
     }
 
